@@ -1,0 +1,397 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Form Validation" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bootstrap Validation - Normal</h4>
+          <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
+            validation–available in all our supported browsers.</p>
+          <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="validationCustom01">First name</label>
+                  <input type="text" class="form-control" id="validationCustom01" formControlName="firstName"
+                    placeholder="First name" [ngClass]="{'is-valid': submit && form.firstName.errors}">
+                  <div *ngIf="submit && form.firstName.errors" class="valid-feedback">
+                    <span *ngIf="form.firstName.errors.required">Looks good!</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="validationCustom02">Last name</label>
+                  <input type="text" class="form-control" id="validationCustom02" formControlName="lastName"
+                    placeholder="Last name" [ngClass]="{'is-valid': submit && form.lastName.errors}">
+                  <div *ngIf="submit && form.lastName.errors" class="valid-feedback">
+                    <span *ngIf="form.lastName.errors.required">Looks good!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="validationCustom03">City</label>
+                  <input type="text" class="form-control" id="validationCustom03" formControlName="city"
+                    placeholder="City" [ngClass]="{'is-invalid': submit && form.city.errors}">
+                  <div *ngIf="submit && form.city.errors" class="invalid-feedback">
+                    <span *ngIf="form.city.errors.required">Please provide a valid city.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="validationCustom04">State</label>
+                  <input type="text" class="form-control" id="validationCustom04" formControlName="state"
+                    placeholder="State" [ngClass]="{'is-invalid': submit && form.state.errors}">
+                  <div *ngIf="submit && form.state.errors" class="invalid-feedback">
+                    <span *ngIf="form.state.errors.required">Please provide a valid state.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="validationCustom05">Zip</label>
+                  <input type="text" class="form-control" id="validationCustom05" formControlName="zip"
+                    placeholder="Zip" [ngClass]="{'is-invalid': submit && form.zip.errors}">
+                  <div *ngIf="submit && form.zip.errors" class="invalid-feedback">
+                    <span *ngIf="form.zip.errors.required">Please provide a valid zip.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
+                  required>
+              <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                  You must agree before submitting.
+              </div>
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+          </form>
+        </div>
+      </div>
+      <!-- end card -->
+    </div> <!-- end col -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bootstrap Validation (Tooltips)</h4>
+          <p class="card-title-desc">If your form layout allows it, you can swap the
+            <code>.valid|invalid-feedback</code> classes for <code>.valid|invalid-tooltip</code> classes to display
+            validation feedback in a styled tooltip.</p>
+          <form class="needs-validation" (ngSubmit)="formSubmit()" [formGroup]="tooltipvalidationform">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-3 position-relative">
+                  <label for="validationTooltip01">First name</label>
+                  <input type="text" class="form-control" formControlName="firstName" id="validationTooltip01"
+                    placeholder="First name" value="Mark"
+                    [ngClass]="{'is-valid': formsubmit && formData.firstName.errors}">
+                  <div *ngIf="formsubmit && formData.firstName.errors" class="valid-tooltip">
+                    <span *ngIf="formData.firstName.errors.required">Looks good!</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-3 position-relative">
+                  <label for="validationTooltip02">Last name</label>
+                  <input type="text" class="form-control" id="validationTooltip02" formControlName="lastName"
+                    placeholder="Last name" value="Otto"
+                    [ngClass]="{'is-valid': formsubmit && formData.lastName.errors}">
+                  <div *ngIf="formsubmit && formData.lastName.errors" class="valid-tooltip">
+                    <span *ngIf="formData.lastName.errors.required">Looks good!</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-3 position-relative">
+                  <label for="validationTooltipUsername">Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validationTooltipUsername" formControlName="userName"
+                      placeholder="Username" aria-describedby="validationTooltipUsernamePrepend"
+                      [ngClass]="{'is-invalid': formsubmit && formData.userName.errors}">
+
+                    <div *ngIf="formsubmit && formData.userName.errors" class="invalid-tooltip">
+                      <span *ngIf="formData.userName.errors.required">Please choose a unique and valid username.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3 position-relative">
+                  <label for="validationTooltip03">City</label>
+                  <input type="text" class="form-control" id="validationTooltip03" placeholder="City"
+                    formControlName="city" [ngClass]="{'is-invalid': formsubmit && formData.city.errors}">
+                  <div *ngIf="formsubmit && formData.city.errors" class="invalid-tooltip">
+                    <span *ngIf="formData.city.errors.required">Please provide a valid city.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3 position-relative">
+                  <label for="validationTooltip04">State</label>
+                  <input type="text" class="form-control" id="validationTooltip04" placeholder="State"
+                    formControlName="state" [ngClass]="{'is-invalid': formsubmit && formData.state.errors}">
+                  <div *ngIf="formsubmit && formData.state.errors" class="invalid-tooltip">
+                    <span *ngIf="formData.state.errors.required">Please provide a valid state.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end card -->
+    </div> <!-- end col -->
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Validation type</h4>
+          <p class="card-title-desc">
+            Parsley is a javascript form validation library. It helps you provide your users with feedback on
+            their form submission before sending it to your server.
+          </p>
+          <form (ngSubmit)="typeSubmit()" [formGroup]="typeValidationForm">
+            <div class="mb-3">
+              <label class="form-label">Required</label>
+              <input type="text" class="form-control" formControlName="text"
+                [ngClass]="{'is-invalid': typesubmit && type.text.errors}" placeholder="Type something" />
+              <div *ngIf="typesubmit && type.text.errors" class="invalid-feedback">
+                <span *ngIf="type.text.errors.required">This value is required.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Equal To</label>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                  [ngClass]="{'is-invalid': typesubmit && type.password.errors}" />
+                <div *ngIf="typesubmit && type.password.errors" class="invalid-feedback">
+                  <span *ngIf="type.password.errors.required">This value is required.</span>
+                  <span *ngIf="type.password.errors.minlength">Password must be at least 6
+                    characters.</span>
+                </div>
+              </div>
+              <div class="mt-2">
+                <input type="password" class="form-control" placeholder="Re-Type Password" formControlName="confirmpwd"
+                  [ngClass]="{'is-invalid': typesubmit && type.confirmpwd.errors}" />
+                <div *ngIf="typesubmit && type.confirmpwd.errors" class="invalid-feedback">
+                  <span *ngIf="type.confirmpwd.errors.required">This value is required.</span>
+                  <span *ngIf="type.confirmpwd.errors.mustMatch">This value should be the same.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">E-Mail</label>
+              <div>
+                <input type="email" class="form-control" formControlName="email"
+                  [ngClass]="{'is-invalid': typesubmit && type.email.errors}" placeholder="Enter a valid e-mail" />
+                <div *ngIf="typesubmit && type.email.errors" class="invalid-feedback">
+                  <span *ngIf="type.email.errors.required">This value is required.</span>
+                  <span *ngIf="type.email.errors.pattern">This value should be a valid email.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">URL</label>
+              <div>
+                <input type="url" class="form-control" placeholder="URL" formControlName="url"
+                  [ngClass]="{'is-invalid': typesubmit && type.url.errors}" />
+                <div *ngIf="typesubmit && type.url.errors" class="invalid-feedback">
+                  <span *ngIf="type.url.errors.required">This value is required.</span>
+                  <span *ngIf="type.url.errors.pattern">This value should be a valid url.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Digits</label>
+              <div>
+                <input formControlName="digits" type="text" class="form-control"
+                  [ngClass]="{'is-invalid': typesubmit && type.digits.errors}" placeholder="Enter only digits" />
+                <div *ngIf="typesubmit && type.digits.errors" class="invalid-feedback">
+                  <span *ngIf="type.digits.errors.required">This value is required.</span>
+                  <span *ngIf="type.digits.errors.pattern">This value should be digits.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Number</label>
+              <div>
+                <input formControlName="number" type="text" class="form-control"
+                  [ngClass]="{'is-invalid': typesubmit && type.number.errors}" placeholder="Enter only numbers">
+                <div *ngIf="typesubmit && type.number.errors" class="invalid-feedback">
+                  <span *ngIf="type.number.errors.required">This value is required.</span>
+                  <span *ngIf="type.number.errors.pattern">This value should be a valid number.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Alphanumeric</label>
+              <div>
+                <input formControlName="alphanum" type="text" class="form-control"
+                  [ngClass]="{'is-invalid': typesubmit && type.alphanum.errors}"
+                  placeholder="Enter alphanumeric value" />
+                <div *ngIf="typesubmit && type.alphanum.errors" class="invalid-feedback">
+                  <span *ngIf="type.alphanum.errors.required">This value is required.</span>
+                  <span *ngIf="type.alphanum.errors.pattern">This value should be alphanumeric.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Textarea</label>
+              <div>
+                <textarea formControlName="textarea" class="form-control" rows="5"
+                  [ngClass]="{'is-invalid': typesubmit && type.textarea.errors}"></textarea>
+                <div *ngIf="typesubmit && type.textarea.errors" class="invalid-feedback">
+                  <span *ngIf="type.textarea.errors.required">This value is required.</span>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary waves-effect waves-light">
+                  Submit
+              </button>
+              <button type="reset" class="btn btn-secondary waves-effect">
+                  Cancel
+              </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Range validation</h4>
+          <p class="card-title-desc">
+            Parsley is a javascript form validation library. It helps you provide your users with feedback on
+            their form submission before sending it to your server.
+          </p>
+          <form (ngSubmit)="rangeSubmit()" [formGroup]="rangeValidationForm">
+            <div class="mb-3">
+              <label>Min Length</label>
+              <div>
+                <input type="text" class="form-control" formControlName="minlength"
+                  [ngClass]="{'is-invalid': rangesubmit && range.minlength.errors}" placeholder="Min 6 chars." />
+                <div *ngIf="rangesubmit && range.minlength.errors" class="invalid-feedback">
+                  <span *ngIf="range.minlength.errors.required">This value is required.</span>
+                  <span *ngIf="range.minlength.errors.minlength">This value is too short. It should have 6
+                    characters or more.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Max Length</label>
+              <div>
+                <input type="text" class="form-control" formControlName="maxlength"
+                  [ngClass]="{'is-invalid': rangesubmit && range.maxlength.errors}" placeholder="Max 6 chars." />
+                <div *ngIf="rangesubmit && range.maxlength.errors" class="invalid-feedback">
+                  <span *ngIf="range.maxlength.errors.required">This value is required.</span>
+                  <span *ngIf="range.maxlength.errors.maxlength">This value is too long. It should have 6
+                    characters or fewer.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Range Length</label>
+              <div>
+                <input type="text" class="form-control" formControlName="rangelength"
+                  [ngClass]="{'is-invalid': rangesubmit && range.rangelength.errors}"
+                  placeholder="Text between 5 - 10 chars length" />
+                <div *ngIf="rangesubmit && range.rangelength.errors" class="invalid-feedback">
+                  <span *ngIf="range.rangelength.errors.required">This value is required.</span>
+                  <span *ngIf="range.rangelength.errors.minlength">This value length is invalid. It should
+                    be between 5 and 10 characters long.</span>
+                  <span *ngIf="range.rangelength.errors.maxlength">This value length is invalid. It should
+                    be between 5 and 10 characters long.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Min Value</label>
+              <div>
+                <input type="text" class="form-control" formControlName="minvalue"
+                  [ngClass]="{'is-invalid': rangesubmit && range.minvalue.errors}" placeholder="Min value is 6" />
+                <div *ngIf="rangesubmit && range.minvalue.errors" class="invalid-feedback">
+                  <span *ngIf="range.minvalue.errors.required">This value is required.</span>
+                  <span *ngIf="range.minvalue.errors.min">This value should be greater than or equal to
+                    6.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Max Value</label>
+              <div>
+                <input type="text" class="form-control" formControlName="maxvalue"
+                  [ngClass]="{'is-invalid': rangesubmit && range.maxvalue.errors}" placeholder="Max value is 6" />
+                <div *ngIf="rangesubmit && range.maxvalue.errors" class="invalid-feedback">
+                  <span *ngIf="range.maxvalue.errors.required">This value is required.</span>
+                  <span *ngIf="range.maxvalue.errors.max">This value should be lower than or equal to
+                    6.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Range Value</label>
+              <div>
+                <input class="form-control" type="text range" formControlName="rangevalue"
+                  [ngClass]="{'is-invalid': rangesubmit && range.rangevalue.errors}"
+                  placeholder="Number between 6 - 100" />
+                <div *ngIf="rangesubmit && range.rangevalue.errors" class="invalid-feedback">
+                  <span *ngIf="range.rangevalue.errors.required">This value is required.</span>
+                  <span *ngIf="range.rangevalue.errors.min">This value should be between 6 and 100.</span>
+                  <span *ngIf="range.rangevalue.errors.max">This value should be between 6 and 100.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label>Regular Exp</label>
+              <div>
+                <input type="text" class="form-control" formControlName="regularexp"
+                  [ngClass]="{'is-invalid': rangesubmit && range.regularexp.errors}" placeholder="Hex. Color" />
+                <div *ngIf="rangesubmit && range.regularexp.errors" class="invalid-feedback">
+                  <span *ngIf="range.regularexp.errors.required">This value is required.</span>
+                  <span *ngIf="range.regularexp.errors.pattern">This value seems to be invalid.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary waves-effect waves-light">
+                  Submit
+              </button>
+              <button type="reset" class="btn btn-secondary waves-effect">
+                  Cancel
+              </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

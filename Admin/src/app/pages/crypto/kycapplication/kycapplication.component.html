@@ -1,0 +1,158 @@
+<div class="container-fluid">
+    <app-page-title title="KYC Application" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+    <div class="row justify-content-center mt-lg-5">
+        <div class="col-xl-5 col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <h4 class="mt-4 fw-semibold">KYC Verification</h4>
+                                <p class="text-muted mt-3">Itaque earum rerum hic tenetur a sapiente delectus ut aut
+                                    reiciendis perferendis asperiores repellat.</p>
+
+                                <div class="mt-4">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#verificationModal" (click)="verificationModal(content)">
+                                        Click here for Verification
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mt-5 mb-2">
+                            <div class="col-sm-6 col-8">
+                                <div>
+                                    <img src="assets/images/verification-img.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra Large Modal -->
+                    <ng-template #content let-modal>
+                        <div class="modal-header">
+                            <h5 class="modal-title mt-0">Verify your Account</h5>
+                            <button type="button" class="btn-close" aria-label="Close"
+                                (click)="modal.dismiss('Close click')">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <aw-wizard [navBarLayout]="'large-empty-symbols'" class="kycwizard">
+                                <aw-wizard-step [stepTitle]="'Personal Info'" [navigationSymbol]="{ symbol: '01' }">
+                                    <div class="kyc-tab-content">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="kycfirstname-input">First name</label>
+                                                        <input type="text" class="form-control" id="kycfirstname-input"
+                                                            placeholder="Enter First name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="kyclastname-input">Last name</label>
+                                                        <input type="text" class="form-control" id="kyclastname-input"
+                                                            placeholder="Enter Last name">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="kycphoneno-input">Phone</label>
+                                                        <input type="text" class="form-control" id="kycphoneno-input"
+                                                            placeholder="Enter Phone number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="kycbirthdate-input">Date of birth</label>
+                                                        <input type="text" class="form-control" id="kycbirthdate-input"
+                                                            placeholder="Enter Date of birth">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="kycselectcity-input">City</label>
+                                                        <select class="form-select" id="kycselectcity-input">
+                                                            <option value="SF" selected="">San Francisco</option>
+                                                            <option value="LA">Los Angeles</option>
+                                                            <option value="SD">San Diego</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <ul class="list-inline wizard mb-0">
+                                        <li class="next list-inline-item float-end"><button class="btn btn-primary"
+                                                awNextStep>Next</button>
+                                        </li>
+                                    </ul>
+                                </aw-wizard-step>
+
+                                <aw-wizard-step [stepTitle]="'Confirm email'" [navigationSymbol]="{ symbol: '02' }">
+                                    <div class="kyc-tab-content">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="kycemail-input">Email</label>
+                                                        <input type="email" class="form-control" id="kycemail-input"
+                                                            placeholder="Enter Email Address">
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="kycconfirmcode-input">Confirm code</label>
+                                                        <input type="email" class="form-control"
+                                                            id="kycconfirmcode-input" placeholder="Enter Confirm code">
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        Didn't recieve code ?
+                                                        <button type="button" class="btn btn-link">Resend Code</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <ul class="list-inline wizard mb-0">
+                                        <li class="previous list-inline-item"><button class="btn btn-primary"
+                                                awPreviousStep>Previous</button>
+                                        </li>
+                                        <li class="next list-inline-item float-end"><button class="btn btn-primary"
+                                                awNextStep>Next</button>
+                                        </li>
+                                    </ul>
+                                </aw-wizard-step>
+
+                                <aw-wizard-step [stepTitle]="'Document Verification'"
+                                    [navigationSymbol]="{ symbol: '03' }">
+                                    <div class="kyc-tab-content">
+                                        <h5 class="font-size-14 mb-3">Upload document file for a verification</h5>
+                                        <div class="kyc-doc-verification">
+                                            <dropzone class="dropzone"></dropzone>
+                                        </div>
+                                    </div>
+                                    <ul class="list-inline wizard mt-2 mb-0">
+                                        <li class="previous list-inline-item"><button class="btn btn-primary"
+                                                awPreviousStep>Previous</button>
+                                        </li>
+                                    </ul>
+                                </aw-wizard-step>
+                            </aw-wizard>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>

@@ -1,0 +1,208 @@
+<div class="container-fluid">
+  <app-page-title title="Form Wizard" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Icon Wizard</h4>
+          <aw-wizard [navBarLayout]="'large-empty-symbols'">
+            <aw-wizard-step>
+              <ng-template awWizardStepSymbol>
+                <i class="fas fa-user"></i>
+              </ng-template>
+              <div class="row">
+                <div class="col-12">
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Email</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="email" type="text" placeholder="Enter email">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Username</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="username" type="text" placeholder="Enter Username">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Password</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="password" type="password" placeholder="Enter Password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline wizard mb-0">
+                <li class="next list-inline-item float-end"><button class="btn btn-primary" awNextStep>Next</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+
+            <aw-wizard-step>
+              <ng-template awWizardStepSymbol>
+                <i class="fas fa-user-circle"></i>
+              </ng-template>
+              <div class="row">
+                <div class="col-12">
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">First name</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="email" type="text" placeholder="Enter email">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Last name</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="username" type="text" placeholder="Enter Username">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Password</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="password" type="password" placeholder="Enter Password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline wizard mb-0">
+                <li class="previous list-inline-item"><button class="btn btn-primary" awPreviousStep>Previous</button>
+                </li>
+                <li class="next list-inline-item float-end"><button class="btn btn-primary" awNextStep>Next</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+
+            <aw-wizard-step>
+              <ng-template awWizardStepSymbol>
+                <i class="fas fa-check-circle"></i>
+              </ng-template>
+              <div class="row justify-content-center">
+                <div class="col-lg-6">
+                  <div class="text-center">
+                    <div class="mb-4">
+                      <i class="mdi mdi-check-circle-outline text-success display-4"></i>
+                    </div>
+                    <div>
+                      <h5>Confirm Detail</h5>
+                      <p class="text-muted">If several languages coalesce, the grammar of the resulting</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline wizard mb-0">
+                <li class="previous list-inline-item"><button class="btn btn-primary" awPreviousStep>Previous</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+          </aw-wizard>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4"> Title Wizard</h4>
+          <aw-wizard [navBarLayout]="'large-empty-symbols'">
+            <aw-wizard-step stepTitle="Seller Details">
+              <ng-template awWizardStepSymbol>1</ng-template>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Contact Person</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="txtFirstNameBilling" type="text" id="txtFirstNameBilling">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Mobile No.</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="txtLastNameBilling" type="text" id="txtLastNameBilling">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Landline No.</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="txtCompanyBilling" type="text" id="txtCompanyBilling">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline wizard mb-0">
+                <li class="next list-inline-item float-end"><button class="btn btn-primary" awNextStep>Next</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+
+            <aw-wizard-step stepTitle="Bank Details">
+              <ng-template awWizardStepSymbol>2</ng-template>
+
+              <div class="row mt-3">
+                <div class="col-12">
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Name on Card</label>
+                    <div class="col-md-9">
+                      <input class="form-control" name="txtNameCard" type="text">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-md-3 col-form-label" for="ddlCreditCardType">Credit Card Type</label>
+                    <div class="col-md-9">
+                      <select id="ddlCreditCardType" name="ddlCreditCardType" class="form-control">
+                        <option value="">--Please Select--</option>
+                        <option value="AE">American Express</option>
+                        <option value="VI">Visa</option>
+                        <option value="MC">MasterCard</option>
+                        <option value="DI">Discover</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Credit Card Number</label>
+                    <div class="col-md-9">
+                      <input id="txtCreditCardNumber" class="form-control" name="txtCreditCardNumber" type="text">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Expiration Date</label>
+                    <div class="col-md-9">
+                      <input id="txtExpirationDate" class="form-control" name="txtExpirationDate" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="list-inline wizard mb-0">
+                <li class="previous list-inline-item"><button class="btn btn-primary" awPreviousStep>Previous</button>
+                </li>
+                <li class="next list-inline-item float-end"><button class="btn btn-primary" awNextStep>Next</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+
+            <aw-wizard-step stepTitle="Confirm Detail">
+              <ng-template awWizardStepSymbol>3</ng-template>
+              <div class="row justify-content-center">
+                <div class="col-lg-6">
+                  <div class="text-center">
+                    <div class="mb-4">
+                      <i class="mdi mdi-check-circle-outline text-success display-4"></i>
+                    </div>
+                    <div>
+                      <h5>Confirm Detail</h5>
+                      <p class="text-muted">If several languages coalesce, the grammar of the resulting</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline wizard mb-0">
+                <li class="previous list-inline-item"><button class="btn btn-primary" awPreviousStep>Previous</button>
+                </li>
+              </ul>
+            </aw-wizard-step>
+          </aw-wizard>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

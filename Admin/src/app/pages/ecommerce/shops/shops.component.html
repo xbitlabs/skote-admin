@@ -1,0 +1,59 @@
+<div class="container-fluid">
+
+  <app-page-title title="Shops" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-xl-4 col-sm-6" *ngFor="let data of shopsData">
+      <div class="card">
+        <div class="row">
+          <div class="col-xl-5">
+            <div class="text-center p-4 border-end">
+              <div class="avatar-sm mx-auto mb-3 mt-1">
+                <span class="avatar-title rounded-circle bg-soft bg-{{data.color}} text-{{data.color}} font-size-16">
+                  {{data.title.charAt(0)}}
+                </span>
+              </div>
+              <h5 class="text-truncate pb-1">{{data.title}}</h5>
+            </div>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="p-4 text-center text-xl-start">
+              <div class="row">
+                <div class="col-md-6">
+                  <div>
+                    <p class="text-muted mb-2 text-truncate">Products</p>
+                    <h5>{{data.poducts}}</h5>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div>
+                    <p class="text-muted mb-2 text-truncate">Wallet Balance</p>
+                    <h5>{{data.balance}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="javascript: void(0);" class="text-decoration-underline text-reset">See Profile
+                  <i class="mdi mdi-arrow-right"></i></a>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  end row -->
+
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center my-3">
+        <a href="javascript:void(0);" class="text-success"><i
+            class="bx bx-loader bx-spin font-size-18 align-middle me-2"></i> Load more </a>
+      </div>
+    </div> <!-- end col-->
+  </div>
+  <!-- end row -->
+</div> <!-- container-fluid -->

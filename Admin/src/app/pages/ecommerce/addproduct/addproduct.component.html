@@ -1,0 +1,117 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Add Product" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Basic Information</h4>
+          <p class="card-title-desc">Fill all information below</p>
+
+          <form [formGroup]="productForm" (ngSubmit)="validSubmit()">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="productname">Product Name</label>
+                  <input id="productname" name="productname" type="text" class="form-control" formControlName="name"
+                    [ngClass]="{'is-invalid': submit && form.name.errors}">
+                  <div *ngIf="submit && form.name.errors" class="invalid-feedback">
+                    <span *ngIf="form.name.errors.required">Name is required.</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="manufacturername">Manufacturer Name</label>
+                  <input id="manufacturername" name="manufacturername" type="text" class="form-control"
+                    formControlName="manufacture_name"
+                    [ngClass]="{'is-invalid': submit && form.manufacture_name.errors}">
+                  <div *ngIf="submit && form.manufacture_name.errors" class="invalid-feedback">
+                    <span *ngIf="form.manufacture_name.errors.required">Manufacturer name is required.</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="manufacturerbrand">Manufacturer Brand</label>
+                  <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control"
+                    formControlName="manufacture_brand" [ngClass]="{'is-invalid': submit &&
+                    form.manufacture_brand.errors}">
+                  <div *ngIf="submit && form.manufacture_brand.errors" class="invalid-feedback">
+                    <span *ngIf="form.manufacture_brand.errors.required">Manufacturer brand is required.</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="price">Price</label>
+                  <input id="price" name="price" type="text" class="form-control" formControlName="price" [ngClass]="{'is-invalid': submit &&
+                  form.price.errors}">
+                  <div *ngIf="submit && form.price.errors" class="invalid-feedback">
+                    <span *ngIf="form.price.errors.required">Price is required.</span>
+                  </div>
+                </div>
+                <label for="product-image" class="mt-2"> Product Images</label>
+                <dropzone class="dropzone" [config]="config"></dropzone>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label class="control-label">Category</label>
+                  <ng-select [items]="['Alaska','Hawaii']"></ng-select>
+                </div>
+                <div class="mb-3">
+                  <label class="control-label">Features</label>
+                  <ng-select [items]="['Alaska','Hawaii','California','Nevada','Oregon','Washington']"
+                    [multiple]="true"></ng-select>
+                </div>
+                <div class="mb-3">
+                  <label for="productdesc">Product Description</label>
+                  <textarea class="form-control" id="productdesc" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+              <button type="submit" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Meta Data</h4>
+          <p class="card-title-desc">Fill all information below</p>
+
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="metatitle">Meta title</label>
+                  <input id="metatitle" name="productname" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label for="metakeywords">Meta Keywords</label>
+                  <input id="metakeywords" name="manufacturername" type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="metadescription">Meta Description</label>
+                  <textarea class="form-control" id="metadescription" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+              <button type="submit" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

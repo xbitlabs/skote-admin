@@ -1,0 +1,175 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Progress Bars" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Default Examples</h4>
+          <p class="card-title-desc">Progress components are built with two
+            HTML elements, some CSS to set the width, and a few attributes.</p>
+
+          <div class="">
+            <p class="mb-4">
+              <ngb-progressbar [value]="25"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="50"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="75"></ngb-progressbar>
+            </p>
+            <p class="mb-0">
+              <ngb-progressbar [value]="100"></ngb-progressbar>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Backgrounds</h4>
+          <p class="card-title-desc">Use background utility classes to
+            change the appearance of individual progress bars.</p>
+
+          <div class="">
+            <p class="mb-4">
+              <ngb-progressbar [value]="25" type="success"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="50" type="info"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="75" type="warning"></ngb-progressbar>
+            </p>
+            <p class="mb-0">
+              <ngb-progressbar [value]="100" type="danger"></ngb-progressbar>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Labels Example</h4>
+          <p class="card-title-desc">Add labels to your progress bars by placing text within the <code
+              class="highlighter-rouge">.progress-bar</code>.</p>
+
+          <div class="">
+            <ngb-progressbar [value]="25" showValue="true"></ngb-progressbar>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Multiple bars</h4>
+          <p class="card-title-desc">Include multiple progress bars in a progress component if you need.</p>
+
+          <div class="">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                aria-valuemax="100"></div>
+              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Height</h4>
+          <p class="card-title-desc">We only set a <code class="highlighter-rouge">height</code> value on the <code
+              class="highlighter-rouge">.progress-bar</code>, so if you change
+            that value the outer <code class="highlighter-rouge">.progress</code>
+            will automatically resize accordingly.</p>
+
+          <div class="">
+            <p>
+              <ngb-progressbar [value]="25" height="3px"></ngb-progressbar>
+            </p>
+            <p>
+              <ngb-progressbar [value]="25" height="20px"></ngb-progressbar>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end col -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Animated stripes</h4>
+          <p class="card-title-desc">The striped gradient can also be
+            animated. Add <code class="highlighter-rouge">.progress-bar-animated</code> to <code
+              class="highlighter-rouge">.progress-bar</code> to animate the
+            stripes right to left via CSS3 animations.</p>
+
+          <div class="">
+            <ngb-progressbar [value]="75" [striped]="true" [animated]="true"></ngb-progressbar>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Striped</h4>
+          <p class="card-title-desc">Add <code class="highlighter-rouge">.progress-bar-striped</code>
+            to any <code class="highlighter-rouge">.progress-bar</code> to apply a
+            stripe via CSS gradient over the progress bar’s background color.</p>
+
+          <div class="">
+
+            <p class="mb-4">
+              <ngb-progressbar [value]="10" [striped]="true" [animated]="true"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="25" [striped]="true" type="success" [animated]="true"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="50" [striped]="true" type="info" [animated]="true"></ngb-progressbar>
+            </p>
+            <p class="mb-4">
+              <ngb-progressbar [value]="75" [striped]="true" type="warning" [animated]="true"></ngb-progressbar>
+            </p>
+            <p class="mb-0">
+              <ngb-progressbar [value]="100" [striped]="true" type="danger" [animated]="true"></ngb-progressbar>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end row-->
+
+</div> <!-- container-fluid -->

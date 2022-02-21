@@ -1,0 +1,163 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Apex charts" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Line with Data Labels</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="linewithDataChart.series" [chart]="linewithDataChart.chart"
+            [colors]="linewithDataChart.colors" [stroke]="linewithDataChart.stroke"
+            [dataLabels]="linewithDataChart.dataLabels" [title]="linewithDataChart.title"
+            [responsive]="linewithDataChart.responsive" [legend]="linewithDataChart.legend"
+            [xaxis]="linewithDataChart.xaxis" [yaxis]="linewithDataChart.yaxis" [stroke]="linewithDataChart.stroke"
+            [markers]="linewithDataChart.markers">
+          </apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Dashed Line</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="dashedLineChart.series" [chart]="dashedLineChart.chart"
+            [dataLabels]="dashedLineChart.dataLabels" [stroke]="dashedLineChart.stroke"
+            [colors]="dashedLineChart.colors" [xaxis]="dashedLineChart.xaxis" [grid]="dashedLineChart.grid"
+            [tooltip]="dashedLineChart.tooltip" [plotOptions]="dashedLineChart.plotOptions"
+            [fill]="dashedLineChart.fill" [markers]="dashedLineChart.markers" [legend]="dashedLineChart.legend"
+            [yaxis]="dashedLineChart.yaxis" [tooltip]="dashedLineChart.tooltip"></apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Spline Area</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="splineAreaChart.series" [chart]="splineAreaChart.chart"
+            [dataLabels]="splineAreaChart.dataLabels" [stroke]="splineAreaChart.stroke"
+            [colors]="splineAreaChart.colors" [xaxis]="splineAreaChart.xaxis" [grid]="splineAreaChart.grid"
+            [tooltip]="splineAreaChart.tooltip"></apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Column Charts</h4>
+
+          <apx-chart class="apex-charts" dir="ltr" [series]="basicColumChart.series" [chart]="basicColumChart.chart"
+            [plotOptions]="basicColumChart.plotOptions" [yaxis]="basicColumChart.yaxis" [grid]="basicColumChart.grid"
+            [tooltip]="basicColumChart.tooltip" [stroke]="basicColumChart.stroke"
+            [dataLabels]="basicColumChart.dataLabels" [xaxis]="basicColumChart.xaxis" [colors]="basicColumChart.colors"
+            [fill]="basicColumChart.fill">
+          </apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Column with Data Labels</h4>
+          <!-- Column Chart with Datalabels -->
+          <apx-chart class="apex-charts" dir="ltr" [series]="columnlabelChart.series" [chart]="columnlabelChart.chart"
+            [plotOptions]="columnlabelChart.plotOptions" [yaxis]="columnlabelChart.yaxis"
+            [title]="columnlabelChart.title" [stroke]="columnlabelChart.stroke"
+            [dataLabels]="columnlabelChart.dataLabels" [xaxis]="columnlabelChart.xaxis"
+            [legend]="columnlabelChart.legend" [colors]="columnlabelChart.colors" [fill]="columnlabelChart.fill">
+          </apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Bar Chart</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChart.series" [chart]="barChart.chart"
+            [plotOptions]="barChart.plotOptions" [dataLabels]="barChart.dataLabels" [xaxis]="barChart.xaxis"
+            [colors]="barChart.colors" [grid]="barChart.grid"></apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Line, Column & Area Chart</h4>
+
+          <!-- Line, column & Area chart-->
+          <apx-chart class="apex-charts" dir="ltr" [series]="lineColumAreaChart.series"
+            [chart]="lineColumAreaChart.chart" [tooltip]="lineColumAreaChart.tooltip" [yaxis]="lineColumAreaChart.yaxis"
+            [legend]="lineColumAreaChart.legend" [plotOptions]="lineColumAreaChart.plotOptions"
+            [grid]="lineColumAreaChart.grid" [stroke]="lineColumAreaChart.stroke" [xaxis]="lineColumAreaChart.xaxis"
+            [colors]="lineColumAreaChart.colors" [fill]="lineColumAreaChart.fill" [labels]="lineColumAreaChart.labels"
+            [markers]="lineColumAreaChart.markers">
+          </apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Radial Chart</h4>
+
+          <apx-chart class="apex-charts" dir="ltr" [series]="basicRadialBarChart.series"
+            [chart]="basicRadialBarChart.chart" [plotOptions]="basicRadialBarChart.plotOptions"
+            [labels]="basicRadialBarChart.labels" [colors]="basicRadialBarChart.colors">
+          </apx-chart>
+        </div>
+      </div>
+      <!--end card-->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Pie Chart</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="simplePieChart.series" [chart]="simplePieChart.chart"
+            [labels]="simplePieChart.labels" [legend]="simplePieChart.legend" [colors]="simplePieChart.colors"
+            [responsive]="simplePieChart.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Donut Chart</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="donutChart.series" [chart]="donutChart.chart"
+            [labels]="donutChart.labels" [legend]="donutChart.legend" [colors]="donutChart.colors"
+            [responsive]="donutChart.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

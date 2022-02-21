@@ -1,0 +1,137 @@
+<div class="container-fluid">
+  <app-page-title title="Form Advanced" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Select2</h4>
+          <label>Single Select</label>
+          <ng-select [items]="selectValue"></ng-select>
+          <label class="mt-3">Multiple Select</label>
+          <ng-select [items]="selectValue" [multiple]="true"></ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Css Switch</h4>
+          <p class="card-title-desc">Here are a few types of switches. </p>
+          <!-- Switches -->
+          <ui-switch defaultBoColor="#dfdfdf" color="#00b19d" checked></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" color="#ffaa00" checked class="ms-1"></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" color="#3bafda" checked class="ms-1"></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" color="#3DDCF7" checked class="ms-1"></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" color="#7266ba" checked class="ms-1"></ui-switch>
+          <h5 class="mt-4 font-size-14 mb-3">Different size switch</h5>
+          <ui-switch defaultBoColor="#dfdfdf" size="small" color="#f46a6a" checked></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" color="#34c38f" checked class="ms-1"></ui-switch>
+          <ui-switch defaultBoColor="#dfdfdf" size="large" color="#50a5f1" checked class="ms-1"></ui-switch>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Color picker -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Colorpicker</h4>
+          <p class="sub-header">Bootstrap Colorpicker is a modular color picker plugin for Bootstrap 4</p>
+
+          <div class="mb-3">
+            <label>Simple input field</label>
+            <input type="text" class="colorpicker-default form-control" [value]="color" [(colorPicker)]="color"
+              [cpOutputFormat]="'hex'" [cpPosition]="'bottom'">
+          </div>
+
+          <div class="mb-3">
+            <label>With custom options - RGBA</label>
+            <input type="text" class="colorpicker-default form-control" [value]="rgbcolor" [(colorPicker)]="rgbcolor"
+              [cpOutputFormat]="'rgba'" [cpPosition]="'bottom'">
+          </div>
+
+          <div class="mb-3">
+            <label>As Component</label>
+            <div id="component-colorpicker" class="input-group" title="Using format option">
+              <input type="text" class="form-control input-lg" [value]="componentcolor">
+              <span class="input-group-text">
+                <span class="input-group-text colorpicker-input-addon" [style.background]="componentcolor"
+                  [(colorPicker)]="componentcolor" [cpPosition]="'bottom'"><i></i></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label>Preset Color</label>
+            <input type="text" class="colorpicker-default form-control" [value]="presetcolor"
+              [(colorPicker)]="presetcolor" [cpDisableInput]="true"
+              [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)']">
+          </div>
+
+          <div class="mb-3">
+            <label>Inline</label>
+            <span [style.background]="inlinecolor" [cpToggle]="true" [cpDialogDisplay]="'inline'"
+              [cpDisableInput]="true" [(colorPicker)]="inlinecolor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End color picker -->
+
+    <!-- Date picker -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Date Picker</h4>
+          <p class="sub-header">Examples of bootstrap datepicker.</p>
+
+          <div>
+            <div class="mb-3">
+              <label>Default Picker</label>
+              <div class="input-group clockpicker">
+                <input ngbDatepicker class="form-control" autoClose="false" placeholder="yyyy-mm-dd"
+                  #date="ngbDatepicker">
+                <div class="input-group-append" (click)="date.toggle()">
+                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Auto close</label>
+              <div class="input-group clockpicker">
+                <input ngbDatepicker class="form-control" placeholder="yyyy-mm-dd" #d="ngbDatepicker">
+                <div class="input-group-append" (click)="d.toggle()">
+                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Date Range</label>
+
+              <ng-template #t let-date let-focused="focused">
+                <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+                  {{ date.day }}
+                </span>
+              </ng-template>
+
+              <input type="text" class="form-control date" (click)="hidden=!hidden" name="daterange" autocomplete="off"
+                [(ngModel)]="selected" />
+
+              <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                outsideDays="hidden" [hidden]="hidden">
+              </ngb-datepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End datepicker -->
+  </div>
+</div>

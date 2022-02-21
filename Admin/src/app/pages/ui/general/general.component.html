@@ -1,0 +1,272 @@
+<div class="container-fluid">
+  <app-page-title title="General" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <div>
+                <h4 class="card-title">Badges</h4>
+                <p class="card-title-desc">Add any of the below mentioned modifier classes to change the appearance of a
+                  badge.</p>
+                <div>
+                  <span class="badge bg-primary">Primary</span>
+                  <span class="badge bg-success ms-1">Success</span>
+                  <span class="badge bg-info ms-1">Info</span>
+                  <span class="badge bg-warning ms-1">Warning</span>
+                  <span class="badge bg-danger ms-1">Danger</span>
+                  <span class="badge bg-dark ms-1">Dark</span>
+                </div>
+
+                <div class="mt-1">
+                  <span class="badge bg-soft-primary">Primary</span>
+                  <span class="badge bg-soft-success ms-1">Success</span>
+                  <span class="badge bg-soft-info ms-1">Info</span>
+                  <span class="badge bg-soft-warning ms-1">Warning</span>
+                  <span class="badge bg-soft-danger ms-1">Danger</span>
+                  <span class="badge bg-soft-dark ms-1">Dark</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mt-4 mt-lg-0">
+                <h4 class="card-title">Pill badges</h4>
+                <p class="card-title-desc">Use the <code>.badge-pill</code> modifier class to make
+                  badges more rounded (with a larger <code>border-radius</code>
+                  and additional horizontal <code>padding</code>).
+                  Useful if you miss the badges from v3.</p>
+
+                <div>
+                  <span class="badge rounded-pill bg-primary">Primary</span>
+                  <span class="badge rounded-pill bg-success ms-1">Success</span>
+                  <span class="badge rounded-pill bg-info ms-1">Info</span>
+                  <span class="badge rounded-pill bg-warning ms-1">Warning</span>
+                  <span class="badge rounded-pill bg-danger ms-1">Danger</span>
+                  <span class="badge rounded-pill bg-dark ms-1">Dark</span>
+                </div>
+
+                <div class="mt-1">
+                  <span class="badge rounded-pill bg-soft-primary">Primary</span>
+                  <span class="badge rounded-pill bg-soft-success ms-1">Success</span>
+                  <span class="badge rounded-pill bg-soft-info ms-1">Info</span>
+                  <span class="badge rounded-pill bg-soft-warning ms-1">Warning</span>
+                  <span class="badge rounded-pill bg-soft-danger ms-1">Danger</span>
+                  <span class="badge rounded-pill bg-soft-dark ms-1">Dark</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Popovers</h4>
+          <p class="card-title-desc">Add small overlay content, like those found in iOS, to any element for housing
+            secondary information.</p>
+
+          <div class="button-items">
+            <button type="button" class="btn btn-secondary" placement="top"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on top
+            </button>
+
+            <button type="button" class="btn btn-secondary" placement="right"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on right
+            </button>
+
+            <button type="button" class="btn btn-secondary" placement="bottom"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on bottom
+            </button>
+
+            <button type="button" class="btn btn-secondary" placement="left" popoverTitle="Popover Title"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on left
+            </button>
+
+            <button type="button" class="btn btn-success" ngbPopover="You see, I show up on hover!"
+              triggers="mouseenter:mouseleave" popoverTitle="Hover Popover">Hover popover</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Tooltips</h4>
+          <p class="card-title-desc">Hover over the links below to see tooltips:</p>
+
+          <div class="button-items">
+            <button type="button" class="btn btn-primary" ngbTooltip="Tooltip on top" placement="top">
+              Tooltip on top
+            </button>
+
+            <button type="button" class="btn btn-primary" ngbTooltip="Tooltip on right" placement="right">
+              Tooltip on right
+            </button>
+
+            <button type="button" class="btn btn-primary" ngbTooltip="Tooltip on bottom" placement="bottom">
+              Tooltip on bottom
+            </button>
+
+            <button type="button" class="btn btn-primary" ngbTooltip="Tooltip on left" placement="left">
+              Tooltip on left
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Pagination</h4>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <h5 class="font-size-14">Default Example</h5>
+              <p class="card-title-desc">Pagination links indicate a series of related content exists across multiple
+                pages.</p>
+
+              <ngb-pagination [collectionSize]="50" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false"
+                [boundaryLinks]="true"></ngb-pagination>
+
+              <ngb-pagination [collectionSize]="30" [(page)]="pages" aria-label="Custom pagination">
+                <ng-template ngbPaginationPrevious>Previous</ng-template>
+                <ng-template ngbPaginationNext>Next</ng-template>
+              </ngb-pagination>
+            </div>
+            <div class="col-lg-6">
+              <div class="mt-4">
+                <h5 class="card-title">Alignment</h5>
+                <p class="card-title-desc">Change the alignment of pagination
+                  components with flexbox utilities.</p>
+
+                <ngb-pagination class="d-flex justify-content-center" [collectionSize]="40" [(page)]="alignpage1">
+                </ngb-pagination>
+                <ngb-pagination class="d-flex justify-content-end" [collectionSize]="40" [(page)]="alignpage2">
+                </ngb-pagination>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- end row -->
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mt-4">
+                <h5 class="font-size-14">Sizing</h5>
+                <p class="card-title-desc">Fancy larger or smaller pagination? Add size=<code>"lg"</code> or
+                  <code>"sm"</code> for additional
+                  sizes.</p>
+
+                <ngb-pagination [collectionSize]="30" [(page)]="largepage" [maxSize]="5" [rotate]="true"
+                  [ellipses]="false" size="lg" aria-label="Custom pagination">
+                  <ng-template ngbPaginationPrevious>Previous</ng-template>
+                  <ng-template ngbPaginationNext>Next</ng-template>
+                </ngb-pagination>
+
+                <ngb-pagination [collectionSize]="30" [(page)]="smallpage" [maxSize]="5" [rotate]="true"
+                  [ellipses]="false" size="sm" aria-label="Custom pagination">
+                  <ng-template ngbPaginationPrevious>Previous</ng-template>
+                  <ng-template ngbPaginationNext>Next</ng-template>
+                </ngb-pagination>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- end row -->
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Border spinner</h4>
+          <p class="card-title-desc">Use the border spinners for a lightweight loading indicator.</p>
+          <div>
+            <div class="spinner-border text-primary m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-secondary m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-success m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-info m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-warning m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-danger m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-border text-dark m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Growing spinner</h4>
+          <p class="card-title-desc">If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t
+            technically spin, it does repeatedly grow!</p>
+          <div>
+            <div class="spinner-grow text-primary m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-secondary m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-success m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-info m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-warning m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-danger m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark m-1" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div>

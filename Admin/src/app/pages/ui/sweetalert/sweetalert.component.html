@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Sweetalert 2" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Examples</h4>
+          <p class="card-title-desc">A beautiful, responsive, customizable
+            and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Zero
+            dependencies.</p>
+
+          <div class="row text-center">
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A basic message</p>
+                <button type="button" class="btn btn-primary" id="sa-basic" (click)="basicMessage()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A title with a text under</p>
+                <button type="button" class="btn btn-primary" id="sa-title" (click)="titleText()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A success message!</p>
+                <button type="button" class="btn btn-primary" id="sa-success" (click)="successmsg()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A warning message, with a function attached to the "Confirm"-button...</p>
+                <button type="button" class="btn btn-primary" id="sa-warning" (click)="confirm()">Click me</button>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>By passing a parameter, you can execute something else for "Cancel".</p>
+                <button type="button" class="btn btn-primary" id="sa-params" (click)="cancel()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A message with custom Image Header</p>
+                <button type="button" class="btn btn-primary" id="sa-image" (click)="imageHeader()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A message with auto close timer</p>
+                <button type="button" class="btn btn-primary" id="sa-close" (click)="timer()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>Custom HTML description and buttons</p>
+                <button type="button" class="btn btn-primary" id="custom-html-alert" (click)="custom()">Click
+                  me</button>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A custom positioned dialog</p>
+                <button type="button" class="btn btn-primary" id="sa-position" (click)="position()">Click
+                  me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>A message with custom width, padding and background</p>
+                <button type="button" class="btn btn-primary" id="custom-padding-width-alert"
+                  (click)="customBackground()">Click me</button>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <p>Ajax request example</p>
+              <button type="button" class="btn btn-primary" id="ajax-alert" (click)="ajax()">Click me</button>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+              <div class="p-3">
+                <p>Dynamic queue example</p>
+                <button type="button" class="btn btn-primary" id="dynamic-alert" (click)="dynamicQueue()">Click
+                  me</button>
+              </div>
+            </div>
+
+          </div> <!-- end row -->
+
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+
+</div> <!-- container-fluid -->

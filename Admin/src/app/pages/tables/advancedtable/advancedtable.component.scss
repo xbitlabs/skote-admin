@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+/* CSS Document */
+@media all {
+  body {
+    overflow: auto !important;
+    width: 100% !important;
+  }
+
+  html,
+  body {
+    background-color: #e4e5e6;
+  }
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  .card {
+    border-radius: 4px;
+  }
+
+  .card-header:first-child {
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  /*Typekit*/
+  html,
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  body {
+    padding-top: 52px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .row {
+    margin-right: -8px;
+    margin-left: -8px;
+  }
+
+  .col,
+  .col-1,
+  .col-10,
+  .col-11,
+  .col-12,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-auto,
+  .col-lg,
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-auto,
+  .col-md,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-auto,
+  .col-sm,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-auto,
+  .col-xl,
+  .col-xl-1,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-auto {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .card-header {
+    background-color: #f0f3f5;
+    border-bottom: 1px solid #c8ced3;
+    font-size: 13px;
+    font-weight: 600;
+    color: #464646;
+    text-transform: uppercase;
+    padding: .75rem 8px;
+  }
+
+
+  .cnstr-record th {
+    white-space: nowrap;
+    padding: .45rem .2rem;
+    font-size: 13px;
+    border-bottom-width: 0px !important;
+  }
+
+  .cnstr-record thead {
+    background: #f0f3f5;
+  }
+
+  .cnstr-record .form-control {
+    font-size: 13px;
+    padding: 0px 0rem 0px 0.2rem;
+    height: calc(2rem + 2px);
+  }
+
+  .cnstr-record select.form-control {
+    padding-left: .05rem;
+  }
+
+  .cnstr-record .table td,
+  .cnstr-record .table th {
+    vertical-align: middle;
+  }
+
+  .cnstr-record .table td {
+    padding: .3rem;
+  }
+
+  .cnstr-record .table td h4 {
+    margin: 0px;
+  }
+
+  .wp-50 {
+    width: 50px;
+  }
+
+  .wp-60 {
+    width: 60px;
+  }
+
+  .wp-70 {
+    width: 70px;
+  }
+
+  .wp-80 {
+    width: 80px;
+  }
+
+  .wp-90 {
+    width: 90px;
+  }
+
+  .wp-100 {
+    width: 100px;
+  }
+
+  .mw-auto {
+    min-width: inherit;
+  }
+
+  .expand-row {
+    width: 100%;
+    border: solid 1px #596269;
+    display: inline-block;
+    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: top;
+    background: #596269;
+    color: #ffffff !important;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .expand-row img {
+    vertical-align: top;
+    position: relative;
+    top: 2px;
+  }
+
+  .sub-table th {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .sub-table td {
+    background: #efefef;
+  }
+
+  .no-bg td {
+    background: inherit;
+  }
+
+  .mw-100 {
+    max-width: 100%;
+  }
+
+}

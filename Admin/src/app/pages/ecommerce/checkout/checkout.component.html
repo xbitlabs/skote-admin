@@ -1,0 +1,388 @@
+<div class="container-fluid">
+  <app-page-title title="Checkout" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="checkout-tabs">
+    <div class="row">
+      <div class="col-xl-2 col-sm-3">
+        <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-pills flex-column">
+          <li [ngbNavItem]="1">
+            <a ngbNavLink>
+              <i class="bx bxs-truck d-block check-nav-icon mt-4 mb-2"></i>
+              <p class="fw-bold mb-4">Shipping Info</p>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="card">
+                <div class="card-body">
+                  <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-shipping" role="tabpanel"
+                      aria-labelledby="v-pills-shipping-tab">
+                      <div>
+                        <h4 class="card-title">Shipping information</h4>
+                        <p class="card-title-desc">Fill all information below</p>
+                        <form>
+                          <div class="row mb-4">
+                            <label for="billing-name" class="col-md-2 col-form-label">Name</label>
+                            <div class="col-md-10">
+                              <input type="text" class="form-control" id="billing-name" placeholder="Enter your name">
+                            </div>
+                          </div>
+                          <div class="row mb-4">
+                            <label for="billing-email-address" class="col-md-2 col-form-label">Email Address</label>
+                            <div class="col-md-10">
+                              <input type="email" class="form-control" id="billing-email-address"
+                                placeholder="Enter your email">
+                            </div>
+                          </div>
+                          <div class="row mb-4">
+                            <label for="billing-phone" class="col-md-2 col-form-label">Phone</label>
+                            <div class="col-md-10">
+                              <input type="text" class="form-control" id="billing-phone"
+                                placeholder="Enter your Phone no.">
+                            </div>
+                          </div>
+                          <div class="row mb-4">
+                            <label for="billing-address" class="col-md-2 col-form-label">Address</label>
+                            <div class="col-md-10">
+                              <textarea class="form-control" id="billing-address" rows="3"
+                                placeholder="Enter full address"></textarea>
+                            </div>
+                          </div>
+                          <div class="row mb-4">
+                            <label class="col-md-2 col-form-label">Country</label>
+                            <div class="col-md-10">
+                              <ng-select [items]="selectValue"></ng-select>
+                            </div>
+                          </div>
+
+                          <div class="row mb-4">
+                            <label class="col-md-2 col-form-label">States</label>
+                            <div class="col-md-10">
+                              <ng-select [items]="stateValue"></ng-select>
+                            </div>
+                          </div>
+                          <div class="row mb-0">
+                            <label for="example-textarea" class="col-md-2 col-form-label">Order Notes:</label>
+                            <div class="col-md-10">
+                              <textarea class="form-control" id="example-textarea" rows="3"
+                                placeholder="Write some note.."></textarea>
+                            </div>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-payment" role="tabpanel"
+                      aria-labelledby="v-pills-payment-tab">
+                      <div>
+                        <h4 class="card-title">Payment information</h4>
+                        <p class="card-title-desc">Fill all information below</p>
+
+                        <div>
+
+                          <div class="custom-control custom-radio custom-control-inline mr-4">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                              class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline1"><i
+                                class="fab fa-cc-mastercard me-1 font-size-20 align-top"></i> Credit / Debit
+                              Card</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline mr-4">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                              class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2"><i
+                                class="fab fa-cc-paypal me-1 font-size-20 align-top"></i> Paypal</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline mr-4">
+                            <input type="radio" id="customRadioInline3" name="customRadioInline1"
+                              class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadioInline3"><i
+                                class="far fa-money-bill-alt me-1 font-size-20 align-top"></i> Cash on Delivery</label>
+                          </div>
+                        </div>
+
+                        <h5 class="mt-5 mb-3 font-size-15">For card Payment</h5>
+                        <div class="p-4 border">
+                          <form>
+                            <div class="mb-0">
+                              <label for="cardnumberInput">Card Number</label>
+                              <input type="text" class="form-control" id="cardnumberInput"
+                                placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <div class="mt-4 mb-0">
+                                  <label for="cardnameInput">Name on card</label>
+                                  <input type="text" class="form-control" id="cardnameInput" placeholder="Name on Card">
+                                </div>
+                              </div>
+                              <div class="col-lg-3">
+                                <div class="mt-4 mb-0">
+                                  <label for="expirydateInput">Expiry date</label>
+                                  <input type="text" class="form-control" id="expirydateInput" placeholder="MM/YY">
+                                </div>
+                              </div>
+                              <div class="col-lg-3">
+                                <div class="mt-4 mb-0">
+                                  <label for="cvvcodeInput">CVV Code</label>
+                                  <input type="text" class="form-control" id="cvvcodeInput"
+                                    placeholder="Enter CVV Code">
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-confir" role="tabpanel" aria-labelledby="v-pills-confir-tab">
+                      <div class="card shadow-none border mb-0">
+                        <div class="card-body">
+                          <h4 class="card-title mb-4">Order Summary</h4>
+
+                          <div class="table-responsive">
+                            <table class="table table-centered mb-0 table-nowrap">
+                              <thead class="thead-light">
+                                <tr>
+                                  <th scope="col">Product</th>
+                                  <th scope="col">Product Desc</th>
+                                  <th scope="col">Price</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                sssssssssssssssssssss
+                                <tr>
+                                  <th scope="row"><img src="assets/images/product/img-1.png" alt="product-img"
+                                      title="product-img" class="avatar-md"></th>
+                                  <td>
+                                    <h5 class="font-size-14 text-truncate"><a routerLink="/ecommerce/product-detail"
+                                        class="text-dark">Half sleeve T-shirt (64GB) </a></h5>
+                                    <p class="text-muted mb-0">$ 450 x 1</p>
+                                  </td>
+                                  <td>$ 450</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><img src="assets/images/product/img-7.png" alt="product-img"
+                                      title="product-img" class="avatar-md"></th>
+                                  <td>
+                                    <h5 class="font-size-14 text-truncate"><a routerLink="/ecommerce/product-detail"
+                                        class="text-dark">Wirless Headphone</a></h5>
+                                    <p class="text-muted mb-0">$ 225 x 1</p>
+                                  </td>
+                                  <td>$ 225</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <h6 class="m-0 text-end">Sub Total:</h6>
+                                  </td>
+                                  <td>
+                                    $ 675
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="3">
+                                    <div class="bg-soft-primary p-3 rounded">
+                                      <h5 class="font-size-14 text-primary mb-0"><i
+                                          class="fas fa-shipping-fast mr-2"></i>
+                                        Shipping <span class="float-end">Free</span></h5>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <h6 class="m-0 text-end">Total:</h6>
+                                  </td>
+                                  <td>
+                                    $ 675
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-4">
+                <div class="col-sm-6">
+                  <a routerLink="/ecommerce/cart" class="btn text-muted d-none d-sm-inline-block btn-link">
+                    <i class="mdi mdi-arrow-left me-1"></i> Back to Shopping Cart </a>
+                </div> <!-- end col -->
+                <div class="col-sm-6">
+                  <div class="text-sm-end">
+                    <a routerLink="/ecommerce/checkout" class="btn btn-success">
+                      <i class="mdi mdi-truck-fast me-1"></i> Proceed to Shipping </a>
+                  </div>
+                </div> <!-- end col -->
+              </div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <a ngbNavLink>
+              <i class="bx bx-money d-block check-nav-icon mt-4 mb-2"></i>
+              <p class="fw-bold mb-4">Payment Info</p>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Payment information</h4>
+                  <p class="card-title-desc">Fill all information below</p>
+
+                  <div>
+                    <div class="form-check form-check-inline font-size-16">
+                        <input class="form-check-input" type="radio" name="paymentoptionsRadio" id="paymentoptionsRadio1" checked>
+                        <label class="form-check-label font-size-13" for="paymentoptionsRadio1"><i class="fab fa-cc-mastercard me-1 font-size-20 align-top"></i> Credit / Debit Card</label>
+                    </div>
+                    <div class="form-check form-check-inline font-size-16">
+                        <input class="form-check-input" type="radio" name="paymentoptionsRadio" id="paymentoptionsRadio2">
+                        <label class="form-check-label font-size-13" for="paymentoptionsRadio2"><i class="fab fa-cc-paypal me-1 font-size-20 align-top"></i> Paypal</label>
+                    </div>
+                    <div class="form-check form-check-inline font-size-16">
+                        <input class="form-check-input" type="radio" name="paymentoptionsRadio" id="paymentoptionsRadio3">
+                        <label class="form-check-label font-size-13" for="paymentoptionsRadio3"><i class="far fa-money-bill-alt me-1 font-size-20 align-top"></i> Cash on Delivery</label>
+                    </div>
+                </div>
+
+                  <h5 class="mt-5 mb-3 font-size-15">For card Payment</h5>
+                  <div class="p-4 border">
+                    <form>
+                      <div class="mb-0">
+                        <label for="cardnumberInput">Card Number</label>
+                        <input type="text" class="form-control" id="cardnumberInput" placeholder="0000 0000 0000 0000">
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="mt-4 mb-0">
+                            <label for="cardnameInput">Name on card</label>
+                            <input type="text" class="form-control" id="cardnameInput" placeholder="Name on Card">
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mt-4 mb-0">
+                            <label for="expirydateInput">Expiry date</label>
+                            <input type="text" class="form-control" id="expirydateInput" placeholder="MM/YY">
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mt-4 mb-0">
+                            <label for="cvvcodeInput">CVV Code</label>
+                            <input type="text" class="form-control" id="cvvcodeInput" placeholder="Enter CVV Code">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-4">
+                <div class="col-sm-6">
+                  <a routerLink="/ecommerce/cart" class="btn text-muted d-none d-sm-inline-block btn-link">
+                    <i class="mdi mdi-arrow-left me-1"></i> Back to Shopping Cart </a>
+                </div> <!-- end col -->
+                <div class="col-sm-6">
+                  <div class="text-sm-end">
+                    <a routerLink="/ecommerce/checkout" class="btn btn-success">
+                      <i class="mdi mdi-truck-fast me-1"></i> Proceed to Shipping </a>
+                  </div>
+                </div> <!-- end col -->
+              </div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="3">
+            <a ngbNavLink>
+              <i class="bx bx-badge-check d-block check-nav-icon mt-4 mb-2"></i>
+              <p class="fw-bold mb-4">Confirmation</p>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="card">
+                <div class="card-body">
+                  <div class="card shadow-none border mb-0">
+                    <div class="card-body">
+                      <h4 class="card-title mb-4">Order Summary</h4>
+
+                      <div class="table-responsive">
+                        <table class="table table-centered mb-0 table-nowrap">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">Product</th>
+                              <th scope="col">Product Desc</th>
+                              <th scope="col">Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"><img src="assets/images/product/img-1.png" alt="product-img"
+                                  title="product-img" class="avatar-md"></th>
+                              <td>
+                                <h5 class="font-size-14 text-truncate"><a routerLink="/ecommerce/product-detail"
+                                    class="text-dark">Half sleeve T-shirt (64GB) </a></h5>
+                                <p class="text-muted mb-0">$ 450 x 1</p>
+                              </td>
+                              <td>$ 450</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><img src="assets/images/product/img-7.png" alt="product-img"
+                                  title="product-img" class="avatar-md"></th>
+                              <td>
+                                <h5 class="font-size-14 text-truncate"><a routerLink="/ecommerce/product-detail"
+                                    class="text-dark">Wirless Headphone </a></h5>
+                                <p class="text-muted mb-0">$ 225 x 1</p>
+                              </td>
+                              <td>$ 225</td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">
+                                <h6 class="m-0 text-end">Sub Total:</h6>
+                              </td>
+                              <td>
+                                $ 675
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3">
+                                <div class="bg-soft bg-primary p-3 rounded">
+                                  <h5 class="font-size-14 text-primary mb-0"><i class="fas fa-shipping-fast me-2"></i>
+                                    Shipping
+                                    <span class="float-end">Free</span></h5>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">
+                                <h6 class="m-0 text-end">Total:</h6>
+                              </td>
+                              <td>
+                                $ 675
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-sm-6">
+                      <a routerLink="/ecommerce/cart" class="btn text-muted d-none d-sm-inline-block btn-link">
+                        <i class="mdi mdi-arrow-left me-1"></i> Back to Shopping Cart </a>
+                    </div> <!-- end col -->
+                    <div class="col-sm-6">
+                      <div class="text-end">
+                        <a routerLink="/ecommerce/checkout" class="btn btn-success">
+                          <i class="mdi mdi-truck-fast me-1"></i> Proceed to Shipping </a>
+                      </div>
+                    </div> <!-- end col -->
+                  </div>
+                </div>
+              </div>
+
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-10">
+        <div [ngbNavOutlet]="nav"></div>
+      </div>
+    </div>
+  </div>
+</div>

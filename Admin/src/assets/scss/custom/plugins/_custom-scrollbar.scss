@@ -1,0 +1,13 @@
+// scroll
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: '';
+  background: #a2adb7 !important;
+  border-radius: 7px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  width: 4px;
+  transition: opacity 0.2s linear;
+}

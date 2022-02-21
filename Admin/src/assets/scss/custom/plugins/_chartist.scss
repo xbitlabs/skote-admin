@@ -1,0 +1,201 @@
+//
+// chartist.scss
+//
+@import '~chartist/dist/chartist.css';
+
+.ct-golden-section:before {
+  float: none;
+}
+
+.ct-chart {
+  max-height: 300px;
+
+  .ct-label {
+    fill: $gray-500 !important;
+    color: #343a40 !important;
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+.ct-chart.simple-pie-chart-chartist {
+  .ct-label {
+    color: $white !important;
+    fill: $white !important;
+    font-size: 16px;
+  }
+}
+
+:not(.without-styles) .ct-series-a .ct-slice-donut {
+  stroke: $blue !important;
+}
+
+:not(.without-styles) .ct-series-b .ct-slice-donut {
+  stroke: $success !important;
+}
+
+:not(.without-styles) .ct-series-c .ct-slice-donut {
+  stroke: $warning !important;
+}
+
+:not(.without-styles) .ct-series-d .ct-slice-donut {
+  stroke: $danger !important;
+}
+
+:not(.without-styles) .ct-series-e .ct-slice-donut {
+  stroke: $info !important;
+}
+
+:not(.without-styles) .ct-series-f .ct-slice-donut {
+  stroke: $pink !important;
+}
+
+:not(.without-styles) .ct-series-g .ct-slice-donut {
+  stroke: $primary !important;
+}
+
+.ct-chart {
+  .ct-series {
+    &.ct-series-a {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $blue !important;
+      }
+    }
+
+    &.ct-series-b {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $success !important;
+      }
+    }
+
+    &.ct-series-c {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $warning !important;
+      }
+    }
+
+    &.ct-series-d {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $danger !important;
+      }
+    }
+
+    &.ct-series-e {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $info !important;
+      }
+    }
+
+    &.ct-series-f {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $pink !important;
+      }
+    }
+
+    &.ct-series-g {
+
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
+        stroke: $primary !important;
+      }
+    }
+  }
+}
+
+.ct-series-a {
+
+  .ct-area,
+  .ct-slice-pie {
+    fill: $blue !important;
+  }
+}
+
+.ct-series-b {
+
+  .ct-area,
+  .ct-slice-pie {
+    fill: $success !important;
+  }
+}
+
+.ct-series-c {
+
+  .ct-area,
+  .ct-slice-pie {
+    fill: $warning !important;
+  }
+}
+
+.ct-series-d {
+
+  .ct-area,
+  .ct-slice-pie {
+    fill: $danger !important;
+  }
+}
+
+.ct-area {
+  fill-opacity: 0.33;
+}
+
+.chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 10px;
+  padding: 2px 10px;
+  border-radius: 3px;
+  background: $dark;
+  color: $white;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.2s linear;
+
+  &.tooltip-show {
+    opacity: 1;
+  }
+}
+
+:not(.without-styles) .ct-series-a .ct-line,
+:not(.without-styles) .ct-series-a .ct-point,
+:not(.without-styles) .ct-series-a .ct-bar {
+  stroke: $blue !important;
+}
+
+:not(.without-styles) .ct-series-b .ct-line,
+:not(.without-styles) .ct-series-b .ct-point,
+:not(.without-styles) .ct-series-b .ct-bar {
+  stroke: #1abc9c !important;
+}
+
+:not(.without-styles) .ct-series-c .ct-line,
+:not(.without-styles) .ct-series-c .ct-point {
+  stroke: #f7b84b !important;
+}

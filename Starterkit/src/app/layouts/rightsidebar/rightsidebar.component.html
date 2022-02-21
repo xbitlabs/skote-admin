@@ -1,0 +1,108 @@
+<!-- Right Sidebar -->
+
+<div class="right-bar" (clickOutside)="hide()" [exclude]="'.right-bar-toggle'">
+
+  <ngx-simplebar class="h-100">
+    <div class="rightbar-title px-3 py-4">
+      <a href="javascript:void(0);" class="right-bar-toggle float-end" (click)="hide();">
+        <i class="mdi mdi-close noti-icon"></i>
+      </a>
+      <h5 class="m-0">Settings</h5>
+
+      <h6 class="mt-4 mb-3">Layout</h6>
+      <hr />
+      
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="is-layout" (click)="changeLayout($event)">
+        <label class="form-check-label" for="is-layout">{{ attribute == 'vertical' ? 'vertical' : 'horizontal' }}</label>
+      </div>
+      <h6 class="mt-4 mb-3">Width</h6>
+      <hr />
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fuild" value="fluid"
+          [checked]="width === 'fluid'" (change)="changeWidth('fluid')">
+        <label class="form-check-label" for="layout-width-fuild">Fluid</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="layout-width" id="layout-width-boxed" value="boxed"
+          [checked]="width === 'boxed'" (change)="changeWidth('boxed')">
+        <label class="form-check-label" for="layout-width-boxed">Boxed</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="layout-width" id="layout-width-scrollable" value="scrollable"
+          [checked]="width === 'scrollable'" (change)="changeWidth('scrollable')">
+        <label class="form-check-label" for="layout-width-scrollable">Scrolable</label>
+      </div>
+      <div *ngIf="attribute == 'vertical'">
+        <h6 class="mt-4 mb-3">Sidebar Color</h6>
+        <hr />
+        <div class="form-check sidebar-setting">
+          <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light" value="light"
+            [checked]="sidebartype === 'light'" (change)="changeSidebartype('light')">
+          <label class="form-check-label" for="sidebar-color-light">Light</label>
+        </div>
+        <div class="form-check sidebar-setting">
+          <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-dark" value="dark"
+            [checked]="sidebartype === 'dark'" (change)="changeSidebartype('dark')">
+          <label class="form-check-label" for="sidebar-color-dark">Dark</label>
+        </div>
+        <div class="form-check sidebar-setting">
+          <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-brand" value="compact"
+            [checked]="sidebartype === 'compact'" (change)="changeSidebartype('compact')">
+          <label class="form-check-label" for="sidebar-color-brand">Compact</label>
+        </div>
+        <div class="form-check sidebar-setting">
+          <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-icon" value="icon"
+            [checked]="sidebartype === 'icon'" (change)="changeSidebartype('icon')">
+          <label class="form-check-label" for="sidebar-color-icon">Icon</label>
+        </div>
+        <div class="form-check sidebar-setting">
+          <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color" value="colored"
+            [checked]="sidebartype === 'colored'" (change)="changeSidebartype('colored')">
+          <label class="form-check-label" for="sidebar-color">Colored</label>
+        </div>
+      </div>
+      <div *ngIf="attribute !== 'vertical'">
+        <h6 class="mt-4 mb-3">Topbar Color</h6>
+        <hr />
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light" value="light"
+            [checked]="topbar === 'light'" (change)="changeTopbar('light')">
+          <label class="form-check-label" for="topbar-color-light">Light</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-dark" value="dark"
+            [checked]="topbar === 'dark'" (change)="changeTopbar('dark')">
+          <label class="form-check-label" for="topbar-color-dark">Dark</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-colored" value="colored"
+            [checked]="topbar === 'colored'" (change)="changeTopbar('colored')">
+          <label class="form-check-label" for="topbar-color-colored">Colored</label>
+        </div>
+      </div>
+      <h6 class="text-center mb-0 mt-4">Choose Layouts</h6>
+      <div class="p-4">
+        <div class="mb-2">
+          <a href="//skote-v-light.angular.themesbrand.com/" target="_blank">
+            <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+          </a>
+        </div>
+        <div class="mb-2">
+          <a href="//skote-v-dark.angular.themesbrand.com/" target="_blank">
+            <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+          </a>
+        </div>
+        <div class="mb-2">
+          <a href="//skote-v-rtl.angular.themesbrand.com/" target="_blank">
+            <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </ngx-simplebar>
+</div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>

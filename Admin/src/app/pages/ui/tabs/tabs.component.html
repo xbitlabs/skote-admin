@@ -1,0 +1,373 @@
+<div class="container-fluid">
+  <app-page-title title="Tabs & Accordions" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Default Tabs</h4>
+          <p class="card-title-desc">Use the tab JavaScript plugin—include
+            it individually or through the compiled <code class="highlighter-rouge">bootstrap.js</code>
+            file—to extend our navigational tabs and pills to create tabbable panes
+            of local content, even via dropdown menus.</p>
+
+          <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                <span class="d-none d-sm-block">Home</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                <span class="d-none d-sm-block">Profile</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                <span class="d-none d-sm-block">Messages</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                <span class="d-none d-sm-block">Settings</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="nav"></div>
+        </div>
+      </div>
+    </div><!-- End Default Tabs -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Justify Tabs</h4>
+          <p class="card-title-desc">Use the tab JavaScript plugin—include
+            it individually or through the compiled <code class="highlighter-rouge">bootstrap.js</code>
+            file—to extend our navigational tabs and pills to create tabbable panes
+            of local content, even via dropdown menus.</p>
+          <ul ngbNav #justifiednav="ngbNav" [activeId]="1" class="nav-pills nav-justified">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                <span class="d-none d-sm-block">Home</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                <span class="d-none d-sm-block">Profile</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                <span class="d-none d-sm-block">Messages</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                <span class="d-none d-sm-block">Settings</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="justifiednav"></div>
+        </div>
+      </div>
+    </div><!-- End Justified Tabs -->
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Vertical Nav Tabs</h4>
+          <p class="card-title-desc">Example of custom tabs</p>
+          <div class="row">
+            <div class="col-md-3">
+              <ul ngbNav #verticalNav="ngbNav" [activeId]="1" class="nav-pills flex-column">
+                <li [ngbNavItem]="1">
+                  <a ngbNavLink class="mb-2">
+                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                    <span class="d-none d-sm-block">Home</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Raw denim you probably haven't heard of them jean shorts Austin.
+                      Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+                      cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+                      butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+                      qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+                      iphone. Seitan aliquip quis cardigan.
+                    </p>
+                    <p>Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+                      qui irure terry richardson ex squid.</p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                  <a ngbNavLink class="mb-2">
+                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                    <span class="d-none d-sm-block">Profile</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                      single-origin coffee squid. Exercitation +1 labore velit, blog
+                      sartorial PBR leggings next level wes anderson artisan four loko
+                      farm-to-table craft beer twee. Qui photo booth letterpress,
+                      commodo enim craft beer mlkshk.
+                    </p>
+                    <p class="mb-0"> Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                      ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna 8-bit</p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                  <a ngbNavLink class="mb-2">
+                    <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                    <span class="d-none d-sm-block">Messages</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Etsy mixtape wayfarers, ethical wes anderson tofu before they
+                      sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                      farm-to-table readymade. Messenger bag gentrify pitchfork
+                      tattooed craft beer, iphone skateboard locavore carles etsy
+                      salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
+                      Leggings gentrify squid 8-bit cred.
+                    </p>
+                    <p class="mb-0">DIY synth PBR banksy irony.
+                      Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
+                      mi whatever gluten-free.</p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="4">
+                  <a ngbNavLink class="mb-2">
+                    <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                    <span class="d-none d-sm-block">Settings</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+                      art party before they sold out master cleanse gluten-free squid
+                      scenester freegan cosby sweater. Fanny pack portland seitan DIY,
+                      art party locavore wolf cliche high life echo park Austin. Cred
+                      vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                      farm-to-table.
+                    </p>
+                    <p class="mb-0">Fanny pack portland seitan DIY,
+                      art party locavore wolf cliche high life echo park Austin. Cred
+                      vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                      farm-to-table.
+                    </p>
+                  </ng-template>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-9">
+              <div [ngbNavOutlet]="verticalNav"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End vertical nav tab -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Custom Tabs</h4>
+          <p class="card-title-desc">Example of custom tabs</p>
+          <ul ngbNav #customNav="ngbNav" [activeId]="1" class="nav-tabs nav-tabs-custom nav-justified">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                <span class="d-none d-sm-block">Home</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                <span class="d-none d-sm-block">Profile</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                <span class="d-none d-sm-block">Messages</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+              <a ngbNavLink>
+                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                <span class="d-none d-sm-block">Settings</span>
+              </a>
+              <ng-template ngbNavContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="customNav"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Default Collapse</h4>
+          <p class="card-title-desc mb-3">
+            You can use a link with the <code class="highlighter-rouge">href</code>
+            attribute, or a button with the <code class="highlighter-rouge">data-target</code>
+            attribute. In both cases, the <code class="highlighter-rouge">data-toggle="collapse"</code>
+            is required.
+          </p>
+          <p>
+            <a class="btn btn-primary mo-mb-2" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
+              href="javascript:void(0)">
+              Link with href
+            </a>
+            <button class="btn btn-primary mo-mb-2 ms-1" type="button" (click)="isCollapsed = !isCollapsed">
+              Button with data-target
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample" [ngbCollapse]="isCollapsed">
+            <div class="card card-body mb-0">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              squid.
+              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+              proident.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Accordion example</h4>
+          <p class="card-title-desc">Extend the default collapse behavior to create an accordion.</p>
+          <ngb-accordion #acc="ngbAccordion" activeIds="static-1" [closeOthers]="true">
+            <ngb-panel id="static-1">
+              <ng-template ngbPanelTitle class="text-black">
+                Collapsible Group Item #1
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life
+                accusamus terry richardson ad squid. 3 wolf moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck
+                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee
+                nulla assumenda shoreditch et. Nihil anim keffiyeh
+                helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them
+                accusamus labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="static-2">
+              <ng-template ngbPanelTitle>
+                Collapsible Group Item #2
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life
+                accusamus terry richardson ad squid. 3 wolf moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck
+                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee
+                nulla assumenda shoreditch et. Nihil anim keffiyeh
+                helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them
+                accusamus labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="static-3">
+              <ng-template ngbPanelTitle>
+                Collapsible Group Item #3
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life
+                accusamus terry richardson ad squid. 3 wolf moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck
+                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee
+                nulla assumenda shoreditch et. Nihil anim keffiyeh
+                helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them
+                accusamus labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+      </div>
+
+    </div><!-- End Accordion -->
+  </div>
+
+  <!-- Tab Content -->
+  <ng-template #TabContent>
+    <p class="p-3 mb-0">
+      Raw denim you probably haven't heard of them jean shorts Austin.
+      Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+      cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+      butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+      qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+      iphone. Seitan aliquip quis cardigan american apparel, butcher
+      voluptate nisi qui.
+    </p>
+  </ng-template>
+
+  <!-- Tab Content -->
+  <ng-template #TabContent1>
+    <p class="p-3 mb-0">
+      Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+      single-origin coffee squid. Exercitation +1 labore velit, blog
+      sartorial PBR leggings next level wes anderson artisan four loko
+      farm-to-table craft beer twee. Qui photo booth letterpress,
+      commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+      vinyl cillum PBR. Homo nostrud organic, assumenda labore
+      aesthetic magna delectus.
+    </p>
+  </ng-template>

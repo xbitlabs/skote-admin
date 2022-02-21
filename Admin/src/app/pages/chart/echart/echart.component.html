@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <app-page-title title="E - chart" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Line chart</h4>
+          <div echarts [options]="lineChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bar chart</h4>
+          <div echarts [options]="barChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Pie chart</h4>
+          <div echarts [options]="pieChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Customize Pie chart</h4>
+          <div echarts [options]="customPieChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Mixed Line-Bar chart</h4>
+          <div echarts [options]="lineBarChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Doughnut Chart</h4>
+          <div echarts [options]="donughnutChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bubble chart</h4>
+          <div echarts [options]="bubbleChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Gauge Chart</h4>
+          <div echarts [options]="gaugeChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Gradient Bar chart (zoom)</h4>
+          <div echarts [options]="gradientBarChart" class="demo-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Form mask" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Example</h4>
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <form action="#">
+                  <div class="mb-4">
+                    <label>Date</label>
+                    <input type="text" class="form-control" mask="00/00/0000">
+                    <span class="text-muted">e.g "dd/mm/yyyy"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>Hour</label>
+                    <input type="text" class="form-control" mask="00:00:00">
+                    <span class="text-muted">e.g "hh:mm:ss"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>Date & Hour</label>
+                    <input type="text" class="form-control" mask="00/00/0000 00:00:00">
+                    <span class="text-muted">e.g "dd/mm/yyyy hh:mm:ss"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>ZIP Code</label>
+                    <input type="text" class="form-control" mask="00000-000">
+                    <span class="text-muted">e.g "xxxxx-xxx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>Money</label>
+                    <input type="text" class="form-control" mask="000.000.000.000.000,00" data-reverse="true">
+                    <span class="text-muted">e.g "Your money"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>4 digit Group</label>
+                    <input type="text" class="form-control" mask="0,0000,0000,0000">
+                    <span class="text-muted">e.g. "x,xxxx,xxxx,xxxx"</span>
+                  </div>
+
+                </form>
+              </div> <!-- end col -->
+              <div class="col-md-6">
+                <form action="#">
+                  <div class="mb-4">
+                    <label>Telephone</label>
+                    <input type="text" class="form-control" mask="0000-0000">
+                    <span class="text-muted">e.g "xxxx-xxxx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>Telephone with Code Area</label>
+                    <input type="text" class="form-control" mask="(00) 0000-0000">
+                    <span class="text-muted">e.g "(xx) xxxx-xxxx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>US Telephone</label>
+                    <input type="text" class="form-control" mask="(000) 000-0000">
+                    <span class="text-muted">e.g "(xxx) xxx-xxxx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>São Paulo Celphones</label>
+                    <input type="text" class="form-control" mask="(00) 00000-0000">
+                    <span class="text-muted">e.g "(xx) xxxxx-xxxx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>CNPJ</label>
+                    <input type="text" class="form-control" mask="00.000.000/0000-00" data-reverse="true">
+                    <span class="text-muted">e.g "xx.xxx.xxx/xxxx-xx"</span>
+                  </div>
+                  <div class="mb-4">
+                    <label>IP Address</label>
+                    <input type="text" class="form-control" mask="099.099.099.099" data-reverse="true">
+                    <span class="text-muted">e.g "xxx.xxx.xxx.xxx"</span>
+                  </div>
+                </form>
+              </div> <!-- end col -->
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

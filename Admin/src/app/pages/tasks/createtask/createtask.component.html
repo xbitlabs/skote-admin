@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Create Task" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Create New Task</h4>
+          <form class="outer-repeater">
+            <div data-repeater-list="outer-group" class="outer">
+              <div data-repeater-item class="outer">
+                <div class="row mb-4">
+                  <label for="taskname" class="col-form-label col-lg-2">Task Name</label>
+                  <div class="col-lg-10">
+                    <input id="taskname" name="taskname" type="text" class="form-control"
+                      placeholder="Enter Task Name...">
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <label class="col-form-label col-lg-2">Task Description</label>
+                  <div class="col-lg-10">
+                    <ckeditor [editor]="Editor" data="<p>Content of the editor.</p>"></ckeditor>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <label class="col-form-label col-lg-2">Task Date</label>
+                  <div class="col-lg-10">
+                    <ng-template #t let-date let-focused="focused">
+                      <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                        [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                        (mouseleave)="hoveredDate = null">
+                        {{ date.day }}
+                      </span>
+                    </ng-template>
+
+                    <input type="text" class="form-control date" (click)="hidden=!hidden" name="daterange"
+                      autocomplete="off" [(ngModel)]="selected" />
+
+                    <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                      outsideDays="hidden" [hidden]="hidden">
+                    </ngb-datepicker>
+                  </div>
+                </div>
+
+                <div class="inner-repeater mb-4">
+                  <form [formGroup]="form">
+                    <div class="inner mb-0 row" formArrayName="member">
+                      <label class="col-form-label col-lg-2">Add Team Member</label>
+                      <div class="inner col-lg-10 ms-md-auto" *ngFor="let data of member.controls; index as i;">
+                        <div class="mb-3 row align-items-center">
+                          <div class="col-md-6">
+                            <input type="text" [formControlName]="i" class="inner form-control"
+                              placeholder="Enter Name..." />
+                          </div>
+                          <div class="col-md-4">
+                            <div class="mt-4 mt-md-0">
+                              <input class="form-control" type="file">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="mt-2 mt-md-0 d-grid">
+                              <input type="button" class="btn btn-primary inner" value="Delete"
+                                (click)="deleteMember(i)" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="row justify-content-end">
+                    <div class="col-lg-10">
+                      <input data-repeater-create type="button" class="btn btn-success inner" value="Add Member"
+                        (click)="addMember()" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <label for="taskbudget" class="col-form-label col-lg-2">Budget</label>
+                  <div class="col-lg-10">
+                    <input id="taskbudget" name="taskbudget" type="text" placeholder="Enter Task Budget..."
+                      class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row justify-content-end">
+            <div class="col-lg-10">
+              <button type="submit" class="btn btn-primary">Create Task</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

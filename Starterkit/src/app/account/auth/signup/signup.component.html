@@ -1,0 +1,119 @@
+<div class="account-pages my-5 pt-sm-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card overflow-hidden">
+          <div class="bg-soft bg-primary">
+            <div class="row">
+              <div class="col-7">
+                <div class="text-primary p-4">
+                  <h5 class="text-primary">Free Register</h5>
+                  <p>Get your free Skote account now.</p>
+                </div>
+              </div>
+              <div class="col-5 align-self-end">
+                <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="card-body pt-0">
+            <div>
+              <a routerLink="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                  <span class="avatar-title rounded-circle bg-light">
+                    <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="p-2">
+
+              <form class="needs-validation" name="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()"
+                novalidate>
+
+                <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Registeration successfull.
+                </ngb-alert>
+
+                <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+
+                  <input type="text" formControlName="username" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" id="username"
+                    placeholder="Enter username" />
+
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Userame is required</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email" placeholder="Email" />
+
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+
+                  <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password" placeholder="Password" />
+
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+                </div>
+
+                <div class="mt-4 d-grid">
+                  <button class="btn btn-primary" type="submit">Register</button>
+                </div>
+                <div class="mt-4 text-center">
+                  <h5 class="font-size-14 mb-3">Sign in with</h5>
+
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                        <i class="mdi mdi-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
+                        <i class="mdi mdi-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                        <i class="mdi mdi-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-4 text-center">
+                  <p class="mb-0">By registering you agree to the Skote <a href="javascript: void(0);"
+                      class="text-primary">Terms of
+                      Use</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end card -->
+
+        <div class="mt-5 text-center">
+          <p>Already have an account ? <a routerLink="/account/login" class="fw-medium text-primary"> Login</a>
+          </p>
+          <p>© {{year}} Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+        </div>
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>

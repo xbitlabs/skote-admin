@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <app-page-title title="Google Maps" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Basic</h4>
+          <p class="card-title-dsec">Example of google maps.</p>
+          <!-- Map -->
+          <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 300px">
+          </agm-map>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Markers</h4>
+          <p class="card-title-dsec">Example of google maps.</p>
+          <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 300px" (mapClick)="placeMarker($event)">
+            <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude">
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <!-- Street view map -->
+          <h4 class="mb-3 card-title">Street View Panoramas</h4>
+          <p class="card-title-dsec">Example of google maps.</p>
+          <div id="streetview-container">
+            <div id="streetview-map" #streetviewMap></div>
+            <div id="streetview-pano" #streetviewPano style="height: 300px"></div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end col -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mb-3 card-title">Location</h4>
+          <p class="card-title-dsec">Example of google maps.</p>
+          <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 300px">
+            <agm-circle [latitude]="latitude" [longitude]="longitude" [radius]="9000" [fillColor]="'red'"
+              [circleDraggable]="true" [editable]="true">
+            </agm-circle>
+          </agm-map>
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div>
+</div>

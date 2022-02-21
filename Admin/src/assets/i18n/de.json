@@ -1,0 +1,313 @@
+{
+  "HEADER": {
+    "SEARCH": "Suche...",
+    "MEGA_MENU": "Mega Menu",
+    "NOTIFICATIONS": {
+      "TITLE": "Benachrichtigungen",
+      "VIEW_ALL": "Alle anzeigen",
+      "LOAD_MORE": "Mehr sehen..",
+      "FIRST": {
+        "TITLE": "Ihre Bestellung wird aufgegeben",
+        "TEXT": "Wenn mehrere Sprachen die Grammatik verschmelzen",
+        "TIME": "Vor 3 Minuten"
+      },
+      "SECOND": {
+        "TITLE": "James Lemire",
+        "TEXT": "Es wird wie vereinfachtes Englisch erscheinen.",
+        "TIME": "Vor 1 Stunde"
+      },
+      "THIRD": {
+        "TITLE": "Ihr Artikel wird versendet",
+        "TEXT": "Wenn mehrere Sprachen die Grammatik verschmelzen",
+        "TIME": "Vor 3 Minuten"
+      },
+      "FOUR": {
+        "TITLE": "Salena Layfield",
+        "TEXT": "Als skeptischer Cambridge-Freund von mir Occidental.",
+        "TIME": "Vor 1 Stunde"
+      }
+    },
+    "SETTINGS": "Einstellungen",
+    "UI": {
+      "TITLE": "UI-Komponenten",
+      "LIGHTBOX": "LightBox",
+      "RANGE_SLIDER": "Range Slider",
+      "SWEET_ALERT": "Sweet Alert",
+      "RATING": "Bewertung",
+      "FORMS": "Formulare",
+      "TABLES": "Tabellen",
+      "CHARTS": "Charts"
+    },
+    "APPLICATIONS": {
+      "TITLE": "Anwendungen",
+      "ECOMMERCE": "Ecommerce",
+      "CALENDAR": "Kalender",
+      "EMAIL": "Email",
+      "PROJECTS": "Projekte",
+      "TASKS": "Aufgaben",
+      "CONTACTS": "Kontakte"
+    },
+    "EXTRA_PAGES": {
+      "TITLE": "Zusätzliche Seiten",
+      "LIGHT_SIDEBAR": "Light Sidebar",
+      "COMPACT_SIDEBAR": "Kompakte Seitenleiste",
+      "HORIZONTAL_LAYOUT": "Horizontal layout",
+      "MAINTENANCE": "Wartungsarbeiten",
+      "COMING SOON": "Bald erhältlich",
+      "TIMELINE": "Timeline",
+      "FAQ": "FAQs"
+    },
+    "LOGIN": {
+      "PROFILE": "Profil",
+      "MY_WALLET": "My Wallet",
+      "SETTINGS": "Einstellungen",
+      "LOCK_SCREEN": "Bildschirm sperren",
+      "LOGOUT": "Abmelden"
+    }
+  },
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Speisekarte"
+    },
+    "DASHBOARDS": {
+      "TEXT": "Dashboards",
+      "BADGE": "04",
+      "LIST": {
+        "DEFAULT": "Standard",
+        "SAAS": "Saas",
+        "CRYPTO": "Krypto",
+        "BLOG": "Blog"
+      }
+    },
+    "LAYOUTS": {
+      "TEXT": "Layouts",
+      "LIST": {
+        "HORIZONTAL": "Horizontal",
+        "LIGHTSIDEBAR": "Leichte Seitenleiste",
+        "COMPACTSIDEBAR": "Kompakte Seitenleiste",
+        "ICONSIDEBAR": "Symbole Seitenleiste",
+        "BOXED": "Boxed Layout",
+        "COLOREDSIDEBAR": "Farbige Seitenleiste",
+        "VERTICAL": "Vertikale",
+        "LIGHTTOPBAR": "Leichte Oberleiste",
+        "COLOREDHEADER": "Farbiger Header",
+        "SCROLLABLE": "Bildlauffähig"
+      }
+    },
+    "APPS": {
+      "TEXT": "Apps"
+    },
+    "CALENDAR": {
+      "TEXT": "Kalender"
+    },
+    "CHAT": {
+      "TEXT": "Plaudern",
+      "BADGE": "Neu"
+    },
+    "FILEMANAGER": {
+      "TEXT": "Dateimanager",
+      "BADGE": "Neu"
+    },
+    "ECOMMERCE": {
+      "TEXT": "E-Commerce",
+      "LIST": {
+        "PRODUCTS": "Produkte",
+        "PRODUCTDETAIL": "Produktdetail",
+        "ORDERS": "Aufträge",
+        "CUSTOMERS": "Kunden",
+        "CART": "Wagen",
+        "CHECKOUT": "Auschecken",
+        "SHOPS": "Geschäfte",
+        "ADDPRODUCT": "Produkt hinzufügen"
+      }
+    },
+    "CRYPTO": {
+      "TEXT": "Krypto",
+      "LIST": {
+        "WALLET": "Brieftasche",
+        "BUY/SELL": "Kaufen Verkaufen",
+        "EXCHANGE": "Austausch",
+        "LENDING": "Ausleihe",
+        "ORDERS": "Aufträge",
+        "KYCAPPLICATION": "KYC-Anwendung",
+        "ICOLANDING": "ICO Landung"
+      }
+    },
+    "EMAIL": {
+      "TEXT": "Email",
+      "LIST": {
+        "INBOX": "Posteingang",
+        "READEMAIL": "E-Mail lesen",
+        "TEMPLATE": {
+          "TEXT": "Vorlage",
+          "BADGE": "Neu",
+          "LIST": {
+            "BASIC": "Grundlegende Aktion",
+            "ALERT": "Benachrichtigungs-E-Mail",
+            "BILLING": "Abrechnung per E-Mail"
+          }
+        }
+      }
+    },
+    "INVOICES": {
+      "TEXT": "Rechnungen",
+      "LIST": {
+        "INVOICELIST": "Rechnungsliste",
+        "INVOICEDETAIL": "Rechnungsdetail"
+      }
+    },
+    "PROJECTS": {
+      "TEXT": "Projekte",
+      "LIST": {
+        "GRID": "Projektraster",
+        "PROJECTLIST": "Projektliste",
+        "OVERVIEW": "Projektübersicht",
+        "CREATE": "Erstelle neu"
+      }
+    },
+    "TASKS": {
+      "TEXT": "Aufgaben",
+      "LIST": {
+        "TASKLIST": "Aufgabenliste",
+        "KANBAN": "Kanban Board",
+        "CREATETASK": "Aufgabe erstellen"
+      }
+    },
+    "CONTACTS": {
+      "TEXT": "Kontakte",
+      "LIST": {
+        "USERGRID": "User Grid",
+        "USERLIST": "Benutzerliste",
+        "PROFILE": "Profil"
+      }
+    },
+    "BLOG": {
+      "TEXT": "Blog",
+      "BADGE": "Neu",
+      "LIST": {
+        "BLOGLIST": "Blog-Liste",
+        "BLOGGRID": "Blog-Raster",
+        "DETAIL": "Blog-Details"
+      }
+    },
+    "PAGES": {
+      "TEXT": "Seiten"
+    },
+    "AUTHENTICATION": {
+      "TEXT": "Authentifizierung",
+      "BADGE": "Neu",
+      "LIST": {
+        "LOGIN": "Anmeldung",
+        "REGISTER": "Registrieren",
+        "RECOVERPWD": "Passwort wiederherstellen",
+        "LOCKSCREEN": "Bildschirm sperren",
+        "LOGIN2": "Anmeldung 2",
+        "REGISTER2": "Registrieren 2",
+        "RECOVERPWD2": "Passwort wiederherstellen 2",
+        "LOCKSCREEN2": "Bildschirm sperren 2",
+        "CONFIRMMAIL": "Mail bestätigen",
+        "CONFIRMMAIL2": "Mail bestätigen 2",
+        "EMAILVERIFICATION": "E-Mail-Verifizierung",
+        "EMAILVERIFICATION2": "E-Mail-Verifizierung 2",
+        "TWOSTEPVERIFICATION": "Überprüfung in zwei Schritten",
+        "TWOSTEPVERIFICATION2": "Überprüfung in zwei Schritten 2"
+      }
+    },
+    "UTILITY": {
+      "TEXT": "Nützlichkeit",
+      "LIST": {
+        "STARTER": "Startseite",
+        "MAINTENANCE": "Instandhaltung",
+        "TIMELINE": "Zeitleiste",
+        "FAQS": "FAQs",
+        "PRICING": "Preisgestaltung",
+        "ERROR404": "Fehler 404",
+        "ERROR500": "Fehler 500"
+      }
+    },
+    "COMPONENTS": {
+      "TEXT": "Komponenten"
+    },
+    "UIELEMENTS": {
+      "TEXT": "UI-Elemente",
+      "LIST": {
+        "ALERTS": "Warnungen",
+        "BUTTONS": "Tasten",
+        "CARDS": "Karten",
+        "CAROUSEL": "Karussell",
+        "DROPDOWNS": "Dropdowns",
+        "GRID": "Gitter",
+        "IMAGES": "Bilder",
+        "MODALS": "Modale",
+        "RANGESLIDER": "Range Slider",
+        "PROGRESSBAR": "Fortschrittsbalken",
+        "SWEETALERT": "Süßer Alarm",
+        "TABS": "Tabs & Akkordeons",
+        "TYPOGRAPHY": "Typografie",
+        "VIDEO": "Video",
+        "GENERAL": "Allgemeines",
+        "COLORS": "Farben",
+        "CROPPER": "Bild Cropper"
+      }
+    },
+    "FORMS": {
+      "TEXT": "Formen",
+      "BADGE": "09",
+      "LIST": {
+        "ELEMENTS": "Formularelemente",
+        "VALIDATION": "Formularvalidierung",
+        "ADVANCED": "Formular erweitert",
+        "EDITOR": "Formulareditor",
+        "FILEUPLOAD": "Hochladen von Formulardateien",
+        "REPEATER": "Form Repeater",
+        "WIZARD": "Formzauberer",
+        "MASK": "Formularmaske",
+        "LAYOUTS": "Formularlayouts"
+      }
+    },
+    "TABLES": {
+      "TEXT": "Tabellen",
+      "LIST": {
+        "BASIC": "Grundtabellen",
+        "ADVANCED": "Erweiterte Tabelle"
+      }
+    },
+    "CHARTS": {
+      "TEXT": "Diagramme",
+      "LIST": {
+        "APEX": "Apex-Diagramm",
+        "CHARTJS": "Chartjs Chart",
+        "CHARTIST": "Chartist Chart",
+        "ECHART": "E Diagramm"
+      }
+    },
+    "ICONS": {
+      "TEXT": "Symbole",
+      "LIST": {
+        "BOXICONS": "Boxicons",
+        "MATERIALDESIGN": "Material Design",
+        "DRIPICONS": "Dripicons",
+        "FONTAWESOME": "Schriftart fantastisch"
+      }
+    },
+    "MAPS": {
+      "TEXT": "Karten",
+      "LIST": {
+        "GOOGLEMAP": "Google Maps"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Multi Level",
+      "LIST": {
+        "LEVEL1": {
+          "1": "Stufe 1.1",
+          "2": "Stufe 1.2",
+          "LEVEL2": {
+            "1": "Stufe 2.1",
+            "2": "Stufe 2.2"
+          }
+        }
+      }
+    }
+  }
+}

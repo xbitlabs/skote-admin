@@ -1,0 +1,146 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title title="Kanban Board" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="dropdown float-end" ngbDropdown>
+            <a href="javascript: void(0);" class="dropdown-toggle arrow-none" ngbDropdownToggle>
+              <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Edit</a>
+              <a class="dropdown-item" href="javascript: void(0);">Delete</a>
+            </div>
+          </div> <!-- end dropdown -->
+
+          <h4 class="card-title mb-4">Upcoming</h4>
+          <div id="upcoming-task" class="pb-1 task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event, upcomingTasks,'upcoming-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+
+            <ng-container *ngFor="let task of upcomingTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, upcomingTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+
+            <div class="text-center d-grid">
+              <a href="javascript: void(0);" class="btn btn-primary"><i class="mdi mdi-plus me-1"></i>
+                Add New</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="dropdown float-end" ngbDropdown>
+            <a href="javascript: void(0);" class="dropdown-toggle arrow-none" ngbDropdownToggle>
+              <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Edit</a>
+              <a class="dropdown-item" href="javascript: void(0);">Delete</a>
+            </div>
+          </div> <!-- end dropdown -->
+
+          <h4 class="card-title mb-4">In Progress</h4>
+          <div id="Progress-task" class="pb-1 task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event, inprogressTasks,'Progress-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+            <ng-container *ngFor="let task of inprogressTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, inprogressTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+            <div class="text-center d-grid">
+              <a href="javascript: void(0);" class="btn btn-primary"><i class="mdi mdi-plus me-1"></i>
+                Add New</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="dropdown float-end" ngbDropdown>
+            <a href="javascript: void(0);" class="dropdown-toggle arrow-none" ngbDropdownToggle>
+              <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Edit</a>
+              <a class="dropdown-item" href="javascript: void(0);">Delete</a>
+            </div>
+          </div> <!-- end dropdown -->
+
+          <h4 class="card-title mb-4">Completed</h4>
+          <div id="completed-task" class="pb-1 task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event, completedTasks,'completed-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+
+            <ng-container *ngFor="let task of completedTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, completedTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+
+            <div class="text-center d-grid">
+              <a href="javascript: void(0);" class="btn btn-primary"><i class="mdi mdi-plus me-1"></i>
+                Add New</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Task  -->
+<ng-template #TaskContent let-task='task'>
+  <div class="card task-box">
+    <div class="card-body">
+      <div class="float-end ms-2">
+        <span class="badge rounded-pill badge-soft-secondary font-size-12" [ngClass]=" { 
+            'badge-soft-secondary': task.task === 'Waiting',
+            'badge-soft-success': task.task === 'Complete',
+            'badge-soft-primary': task.task === 'Approved',
+            'badge-soft-warning': task.task === 'Pending' }">{{task.task}}</span>
+      </div>
+      <div>
+        <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark">{{task.title}}</a>
+        </h5>
+        <p class="text-muted mb-4">{{task.date}}</p>
+      </div>
+
+      <div class="avatar-group float-start">
+        <div class="avatar-group-item">
+          <a href="javascript: void(0);" class="d-inline-block">
+            <img src="{{ task.user[0]}}" class="rounded-circle avatar-xs" alt="">
+          </a>
+        </div>
+        <div class="avatar-group-item" *ngIf="task.user[1]">
+          <a href="javascript: void(0);" class="d-inline-block">
+            <img src="{{ task.user[1]}}" class="rounded-circle avatar-xs" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="text-end">
+        <h5 class="font-size-15 mb-1">$ {{task.budget}}</h5>
+        <p class="mb-0 text-muted">Budget</p>
+      </div>
+    </div>
+  </div>
+</ng-template>

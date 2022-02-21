@@ -1,0 +1,108 @@
+<app-loader></app-loader>
+
+<div class="container-fluid">
+  <app-page-title title="Calendar" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="app-calendar">
+            <!-- calendar -->
+            <full-calendar [options]="calendarOptions"></full-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add New Event MODAL -->
+<ng-template #modalShow let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-title">Add New Event</h5>
+    <button type="button" class="btn-close" (click)="closeEventModal()"></button>
+  </div>
+  <div class="modal-body p-4">
+    <form (ngSubmit)="saveEvent()" [formGroup]="formData">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label class="control-label">Event Name</label>
+            <input class="form-control" placeholder="Insert Event Name" type="text" name="title" formControlName="title"
+              [ngClass]="{'is-invalid': submitted && form.title.errors}" />
+            <div *ngIf="submitted && form.title.errors" class="invalid-feedback">
+              <span *ngIf="form.title.errors.required">This value is required.</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label class="control-label">Category</label>
+            <select class="form-control" name="category" formControlName="category"
+              [ngClass]="{'is-invalid': submitted && form.category.errors }">
+              <option *ngFor="let option of category" value="{{ option.value }}">
+                {{ option.name }}
+              </option>
+            </select>
+            <div *ngIf="submitted && form.category.errors" class="invalid-feedback">
+              <div *ngIf="form.category.errors.required">This value is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-end mt-2">
+        <button type="button" class="btn btn-light me-1" (click)="closeEventModal()">
+          Close
+        </button>
+        <button type="submit" class="btn btn-success" id="btn-save-event">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- end modal dialog-->
+</ng-template>
+<!-- end modal-->
+
+<!-- Edit event modal -->
+<ng-template #editmodalShow let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Edit Event</h5>
+    <button type="button" class="btn-close" aria-hidden="true" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body p-4">
+    <form [formGroup]="formEditData" (ngSubmit)="editEventSave()">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label class="control-label">Event name</label>
+            <input class="form-control" placeholder="Insert Event Name" type="text" name="editTitle"
+              formControlName="editTitle">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label class="control-label">Event category</label>
+            <select class="form-control" name="ecategory" formControlName="editCategory" required>
+              <option *ngFor="let option of category" value="{{ option.value }}"> {{ option.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-6">
+          <button type="button" class="btn btn-danger delete-event ms-1" (click)="confirm()">Delete</button>
+        </div>
+        <div class="col-6 text-end">
+          <button type="button" class="btn btn-light" (click)="modal.dismiss('Close')">Close</button>
+          <button type="submit" class="btn btn-success ms-1">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ng-template>

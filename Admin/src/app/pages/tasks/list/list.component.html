@@ -1,0 +1,326 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Task List" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start">
+            <h4 class="card-title mb-4">Upcoming</h4>
+            <button class="btn btn-success ms-auto" (click)="openModal(content)">Add Task</button>
+          </div>
+          <ng-template #content role="document" let-modal>
+            <div class="modal-header">
+              <h5 class="modal-title mt-0">Add Customer</h5>
+              <button type="button" class="btn-close" aria-hidden="true"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+              <form (ngSubmit)="listData()" [formGroup]="formData">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="tasktype">Task Type</label>
+                      <select class="form-select" formControlName="taskType">
+                        <option value="inprogress">Inprogress</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="control-label">Task title</label>
+                      <input class="form-control" placeholder="Enter title" type="text" name="title"
+                        formControlName="name" [ngClass]="{'is-invalid': submitted && form.name.errors}" />
+                      <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+                        <span *ngIf="form.name.errors.required">Name is required.</span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="file">File</label>
+                      <input formControlName="file" id="file" type="file" multiple class="form-control"
+                        (change)="onFileChange($event)">
+                      <div *ngIf="submitted && form.file.touched && submitted && form.file.invalid"
+                        class="alert alert-danger">
+                        <div *ngIf="submitted && form.file.errors.required">File is required.</div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="status">Task Status</label>
+                      <select class="form-select" formControlName="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Complete">Complete</option>
+                        <option value="Approved">Approved</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-success">Submit</button>
+              </form>
+            </div>
+
+          </ng-template>
+          <div class="table-responsive">
+            <table class="table table-nowrap align-middle mb-0">
+              <tbody>
+                <tr *ngFor="let list of upcomingTasks">
+                  <td style="width: 40px;">
+                    <div class="form-check font-size-16">
+                      <input type="checkbox" class="form-check-input" id="customCheck{{list.index}}"
+                        [checked]="list.checked">
+                      <label class="form-check-label" for="customCheck{{list.index}}"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);"
+                        class="text-dark">{{list.name}}</a></h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{list.images[0]}}" class="rounded-circle avatar-xs" alt="">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item" *ngIf="list.images[1]">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{list.images[1]}}" class="rounded-circle avatar-xs" alt="">
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="text-center">
+                      <span class="badge rounded-pill font-size-11" [ngClass]="{'badge-soft-primary': list.status  === 'Approved',
+                      'badge-soft-secondary': list.status === 'Waiting'}">{{list.status}}</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start">
+            <h4 class="card-title mb-4">In Progress</h4>
+            <button class="btn btn-success ms-auto" (click)="openModal(content)">Add Task</button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-nowrap align-middle mb-0">
+              <tbody>
+                <tr *ngFor="let progresstask of inprogressTasks">
+                  <td style="width: 40px;">
+                    <div class="form-check font-size-16">
+                      <input type="checkbox" class="form-check-input" id="customCheck{{progresstask.index}}"
+                        [checked]="progresstask.checked">
+                      <label class="form-check-label" for="customCheck{{progresstask.index}}"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);"
+                        class="text-dark">{{progresstask.name}}</a></h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{progresstask.images[0]}}" class="rounded-circle avatar-xs" alt="">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item" *ngIf="progresstask.images[1]">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{progresstask.images[1]}}" class="rounded-circle avatar-xs" alt="">
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="text-center">
+                      <span class="badge rounded-pill badge-soft-success font-size-11"
+                        [ngClass]="{'badge-soft-warning': progresstask.status  === 'Pending'}">{{progresstask.status}}</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-start">
+            <h4 class="card-title mb-4">Completed</h4>
+            <button class="btn btn-success ms-auto" (click)="openModal(content)">Add Task</button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-nowrap align-middle mb-0">
+              <tbody>
+                <tr *ngFor="let completetask of completedTasks">
+                  <td style="width: 40px;">
+                    <div class="form-check font-size-16">
+                      <input type="checkbox" class="form-check-input" id="customCheck{{completetask.index}}"
+                        [(ngModel)]="completetask.checked">
+                      <label class="form-check-label" for="customCheck{{completetask.index}}"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);"
+                        class="text-dark">{{completetask.name}}</a>
+                    </h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{completetask.images[0]}}" class="rounded-circle avatar-xs m-1" alt="">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item" *ngIf="completetask.images[1]">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="{{completetask.images[1]}}" class="rounded-circle avatar-xs m-1" alt="">
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="text-center">
+                      <span class="badge rounded-pill badge-soft-success font-size-11">{{completetask.status}}</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Tasks</h4>
+
+          <apx-chart dir="ltr" class="apex-charts" [series]="taskChart.series" [chart]="taskChart.chart"
+            [yaxis]="taskChart.yaxis" [stroke]="taskChart.stroke" [colors]="taskChart.colors" [fill]="taskChart.fill"
+            [plotOptions]="taskChart.plotOptions" [markers]="taskChart.markers" [labels]="taskChart.labels">
+          </apx-chart>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Recent Tasks</h4>
+
+          <div class="table-responsive">
+            <table class="table table-nowrap align-middle mb-0">
+              <tbody>
+                <tr>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Brand
+                        logo design</a></h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Create a
+                        Blog Template
+                        UI</a></h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <div class="avatar-xs">
+                            <span class="avatar-title rounded-circle bg-info text-white font-size-16">
+                              D
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5 class="text-truncate font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Redesign
+                        - Landing page</a>
+                    </h5>
+                  </td>
+                  <td>
+                    <div class="avatar-group">
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <div class="avatar-xs">
+                            <span class="avatar-title rounded-circle bg-danger text-white font-size-16">
+                              K
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="avatar-group-item">
+                        <a href="javascript: void(0);" class="d-inline-block">
+                          <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xs">
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- end table responsive -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

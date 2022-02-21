@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <app-page-title title="Range Slider" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <!-- Row -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Range slider</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Default</h5>
+                <ng5-slider [(value)]="defaultVal" [options]="option"></ng5-slider>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Min-Max</h5>
+                <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with custom step value</h5>
+                <ng5-slider [(value)]="custom" [options]="customOption"></ng5-slider>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with floating point values</h5>
+                <ng5-slider [(value)]="floatValue" [options]="floatingOptions"></ng5-slider>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with custom display function</h5>
+                <ng5-slider [(value)]="value1" [(highValue)]="maxVal" [options]="option1"></ng5-slider>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with ticks</h5>
+                <ng5-slider [(value)]="tickvalue" [(highValue)]="tickhighValue" [options]="tickoptions"></ng5-slider>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with draggable range</h5>
+                <ng5-slider [(value)]="draggableminValue" [(highValue)]="draggablemaxValue"
+                  [options]="draggableoptions"></ng5-slider>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with logarithmic scale</h5>
+                <ng5-slider [(value)]="logscale" [options]="logscaleoptions"></ng5-slider>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with visible selection bar</h5>
+                <ng5-slider [(value)]="visibleSelection" [options]="visibleBarOptions"></ng5-slider>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3">
+                <h5 class="font-size-14 mb-3 mt-0">Slider with ticks and value</h5>
+                <ng5-slider [(value)]="tickValue" [options]="tickValueoptions"></ng5-slider>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Row -->
+</div>

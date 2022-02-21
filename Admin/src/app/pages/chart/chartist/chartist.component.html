@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <app-page-title title="Chartist chart" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" dir="ltr">
+          <h4 class="card-title mb-4">Simple line chart</h4>
+          <!-- Simple line chart -->
+          <lib-ngx-chartist class="ct-chart" [data]="simpleLineChart.data" [options]="simpleLineChart.options"
+            [type]="simpleLineChart.type"></lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" dir="ltr">
+          <h4 class="card-title mb-4">Line chart with area</h4>
+          <!-- Line chart with area -->
+          <lib-ngx-chartist class="ct-chart" [data]="areaLineChart.data" [options]="areaLineChart.options" [type]="areaLineChart.type">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" dir="ltr">
+          <h4 class="card-title mb-4">Stacked bar chart</h4>
+          <!-- Stacked bar chart -->
+          <lib-ngx-chartist class="ct-chart" [data]="stackBarChart.data" [options]="stackBarChart.options" [type]="stackBarChart.type"
+            [events]="stackBarChart.events">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Horizontal bar chart</h4>
+          <!-- Horizontal bar chart -->
+          <lib-ngx-chartist class="ct-chart" [data]="horizontalBarChart.data" [options]="horizontalBarChart.options"
+            [type]="horizontalBarChart.type" [events]="horizontalBarChart.events">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" dir="ltr">
+          <h4 class="card-title mb-4">Overlapping bars on mobile</h4>
+          <!-- Overlapping bars on mobile -->
+          <lib-ngx-chartist class="ct-chart" [data]="overlappingBarChart.data" [options]="overlappingBarChart.options"
+            [type]="overlappingBarChart.type" [responsiveOptions]="overlappingBarChart.responsiveOptions">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" dir="ltr">
+          <h4 class="card-title mb-4">Line Scatter Diagram</h4>
+          <!-- Line Scatter Diagram -->
+          <lib-ngx-chartist class="ct-chart" [data]="lineScatter.data" [options]="lineScatter.options"
+            [type]="lineScatter.type ? lineScatter.type: 'Line'" [responsiveOptions]="lineScatter.responsiveOptions"
+            [events]="lineScatter.events" [lineSmooth]="lineScatter.lineSmooth">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Animating a Donut with Svg.animate</h4>
+          <!-- Animating a Donut with Svg.animate -->
+          <lib-ngx-chartist [data]="donutAnimateChart.data" [options]="donutAnimateChart.options"
+            [type]="donutAnimateChart.type" [events]="donutAnimateChart.events">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Simple pie chart</h4>
+          <!-- Simple pie chart -->
+          <lib-ngx-chartist [data]="simplePieChart.data" [options]="simplePieChart.options" [type]="simplePieChart.type"
+            [events]="simplePieChart.events">
+          </lib-ngx-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

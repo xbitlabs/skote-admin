@@ -1,0 +1,134 @@
+{
+  "transactions": [{
+      "id": "#SK2540",
+      "name": "Neal Matthews",
+      "date": "07 Oct, 2019",
+      "total": "$400",
+      "status": "Paid",
+      "payment": ["fa-cc-mastercard", "Mastercard"],
+      "index": 1
+    },
+    {
+      "id": "#SK2541",
+      "name": "Jamal Burnett",
+      "date": "07 Oct, 2019",
+      "total": "$380",
+      "status": "Chargeback",
+      "payment": ["fa-cc-visa", "Visa"],
+      "index": 2
+    },
+    {
+      "id": "#SK2542",
+      "name": "Juan Mitchell",
+      "date": "06 Oct, 2019",
+      "total": "$384",
+      "status": "Paid",
+      "payment": ["fab fa-cc-paypal", "Paypal"],
+      "index": 3
+    },
+    {
+      "id": "#SK2543",
+      "name": "Barry Dick",
+      "date": "05 Oct, 2019",
+      "total": "$412",
+      "status": "Paid",
+      "payment": ["fa-cc-mastercard", "Mastercard"],
+      "index": 4
+    },
+    {
+      "id": "#SK2544",
+      "name": "Ronald Taylor",
+      "date": "04 Oct, 2019",
+      "total": "$404",
+      "status": "Refund",
+      "payment": ["fa-cc-visa", "Visa"],
+      "index": 5
+    },
+    {
+      "id": "#SK2545",
+      "name": "Jacob Hunter",
+      "date": "04 Oct, 2019",
+      "total": "$392",
+      "status": "Paid",
+      "payment": ["fab fa-cc-paypal", "Paypal"],
+      "index": 6
+    }
+  ],
+
+  "statData": [{
+    "icon": "bx bx-copy-alt",
+    "title": "Orders",
+    "value": "1,235"
+  }, {
+    "icon": "bx bx-archive-in",
+    "title": "Revenue",
+    "value": "$35, 723"
+  }, {
+    "icon": "bx bx-purchase-tag-alt",
+    "title": "Average Price",
+    "value": "$16.2"
+  }],
+
+  "sassEarning": [{
+    "name": "This month",
+    "amount": "$2453.35",
+    "revenue": "0.4",
+    "time": "From previous period",
+    "month": "Last month",
+    "previousamount": "$2281.04",
+    "series": [{
+      "name": "series1",
+      "data": [31, 40, 36, 51, 49, 72, 69, 56, 68, 82, 68, 76]
+    }]
+  }],
+
+  "sassTopSelling": [{
+    "title": "Product A",
+    "amount": "$ 6385",
+    "revenue": "0.6",
+    "list": [{
+        "name": "Product A",
+        "text": "Neque quis est",
+        "sales": 37,
+        "chartVariant": "#556ee6"
+      },
+      {
+        "name": "Product B",
+        "text": "Quis autem iure",
+        "sales": 72,
+        "chartVariant": "#34c38f"
+      },
+      {
+        "name": "Product C",
+        "text": "Sed aliquam mauris.",
+        "sales": 54,
+        "chartVariant": "#f46a6a"
+      }
+    ]
+  }],
+
+  "cryptoWalletBalance": [{
+    "text": "Available Balance",
+    "amount": "$ 6134.39",
+    "subamount": "+ 0.0012.23 ( 0.2 % )",
+    "income": "$ 2632.46",
+    "expense": "$ 924.38",
+    "chartSeries": [76, 67, 61],
+    "balancelist": [{
+        "text": "Ethereum",
+        "coin": "4.5701 ETH",
+        "amount": "$ 1123.64"
+      },
+      {
+        "text": "Bitcoin",
+        "coin": "0.4412 BTC",
+        "amount": "$ 4025.32"
+      },
+      {
+        "text": "Litecoin",
+        "coin": "35.3811 LTC",
+        "amount": "$ 2263.09"
+      }
+    ]
+  }]
+}

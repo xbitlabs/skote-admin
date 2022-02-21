@@ -1,0 +1,19 @@
+<div id="layout-wrapper">
+
+  <app-topbar (settingsButtonClicked)="onSettingsButtonClicked()" (mobileMenuButtonClicked)="onToggleMobileMenu()">
+  </app-topbar>
+
+  <app-sidebar [isCondensed]="isCondensed"></app-sidebar>
+
+  <div class="main-content">
+    <div class="page-content">
+      <!-- content -->
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<app-rightsidebar></app-rightsidebar>

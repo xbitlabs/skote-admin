@@ -1,0 +1,73 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Create New" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Create New Project</h4>
+          <form>
+            <div class="row mb-4">
+              <label for="projectname" class="col-form-label col-lg-2">Project Name</label>
+              <div class="col-lg-10">
+                <input id="projectname" name="projectname" type="text" class="form-control"
+                  placeholder="Enter Project Name...">
+              </div>
+            </div>
+            <div class="row mb-4">
+              <label for="projectdesc" class="col-form-label col-lg-2">Project Description</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" id="projectdesc" rows="3"
+                  placeholder="Enter Project Description..."></textarea>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">Project Date</label>
+              <div class="col-lg-10">
+                <ng-template #t let-date let-focused="focused">
+                  <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+
+                <input type="text" class="form-control date" (click)="hidden=!hidden" name="daterange"
+                  autocomplete="off" [(ngModel)]="selected" />
+
+                <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                  outsideDays="hidden" [hidden]="hidden">
+                </ngb-datepicker>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label for="projectbudget" class="col-form-label col-lg-2">Budget</label>
+              <div class="col-lg-10">
+                <input id="projectbudget" name="projectbudget" type="text" placeholder="Enter Project Budget..."
+                  class="form-control">
+              </div>
+            </div>
+          </form>
+          <div class="row mb-4">
+            <label class="col-form-label col-lg-2">Attached Files</label>
+            <div class="col-lg-10">
+              <dropzone class="dropzone"></dropzone>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-lg-10">
+              <button type="submit" class="btn btn-primary">Create Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

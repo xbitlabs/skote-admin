@@ -1,0 +1,399 @@
+<div class="container-fluid">
+  <app-page-title title="Chat" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="d-lg-flex">
+    <div class="chat-leftsidebar me-lg-4">
+      <div class="">
+        <div class="py-4 border-bottom">
+          <div class="media">
+            <div class="align-self-center me-3">
+              <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle" alt="">
+            </div>
+            <div class="media-body">
+              <h5 class="font-size-15 mt-0 mb-1">Henry Wells</h5>
+              <p class="text-muted mb-0"><i class="mdi mdi-circle text-success align-middle me-1"></i> Active</p>
+            </div>
+
+            <div ngbDropdown>
+              <div class="dropdown chat-noti-dropdown active">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" ngbDropdownToggle>
+                  <i class="bx bx-bell bx-tada"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                  <a class="dropdown-item" href="javascript: void(0);">Action</a>
+                  <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+                  <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-box chat-search-box py-4">
+          <div class="position-relative">
+            <input type="text" class="form-control" placeholder="Search...">
+            <i class="bx bx-search-alt search-icon"></i>
+          </div>
+        </div>
+
+        <div class="chat-leftsidebar-nav">
+          <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-pills nav-justified">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <i class="bx bx-chat font-size-20 d-sm-none"></i>
+                <span class="d-none d-sm-block">Chat</span>
+              </a>
+              <ng-template ngbNavContent>
+                <div>
+                  <h5 class="font-size-14 mb-3">Recent</h5>
+                  <ngx-simplebar style="position: relative; height: 410px;" #scrollEle
+                    >
+                    <ul class="list-unstyled chat-list">
+                      <li class="" *ngFor="let data of chatData">
+                        <a href="javascript: void(0);" (click)="chatUsername(data.name)">
+                          <div class="media">
+                            <div class="align-self-center me-3">
+                              <i class="mdi mdi-circle text-{{data.color}} font-size-10"></i>
+                            </div>
+                            <div class="align-self-center me-3" *ngIf="data.image">
+                              <img src="{{ data.image }}" class="rounded-circle avatar-xs" alt="">
+                            </div>
+                            <div class="avatar-xs align-self-center me-3" *ngIf="!data.image">
+                              <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                                {{data.name.charAt(0)}}
+                              </span>
+                            </div>
+                            <div class="media-body overflow-hidden">
+                              <h5 class="text-truncate font-size-14 mb-1">{{ data.name }}</h5>
+                              <p class="text-truncate mb-0">{{ data.message }}</p>
+                            </div>
+                            <div class="font-size-11">{{ data.time }}</div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </ngx-simplebar>
+                </div>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <i class="bx bx-group font-size-20 d-sm-none"></i>
+                <span class="d-none d-sm-block">Groups</span>
+              </a>
+              <ng-template ngbNavContent>
+                <h5 class="font-size-14 mb-3">Groups</h5>
+                <ul class="list-unstyled chat-list">
+                  <li>
+                    <a href="javascript: void(0);">
+                      <div class="media align-items-center">
+                        <div class="avatar-xs me-3">
+                          <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                            G
+                          </span>
+                        </div>
+
+                        <div class="media-body">
+                          <h5 class="font-size-14 mb-0">General</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);">
+                      <div class="media align-items-center">
+                        <div class="avatar-xs me-3">
+                          <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                            R
+                          </span>
+                        </div>
+
+                        <div class="media-body">
+                          <h5 class="font-size-14 mb-0">Reporting</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);">
+                      <div class="media align-items-center">
+                        <div class="avatar-xs me-3">
+                          <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                            M
+                          </span>
+                        </div>
+
+                        <div class="media-body">
+                          <h5 class="font-size-14 mb-0">Meeting</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);">
+                      <div class="media align-items-center">
+                        <div class="avatar-xs me-3">
+                          <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                            A
+                          </span>
+                        </div>
+
+                        <div class="media-body">
+                          <h5 class="font-size-14 mb-0">Project A</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);">
+                      <div class="media align-items-center">
+                        <div class="avatar-xs me-3">
+                          <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                            B
+                          </span>
+                        </div>
+
+                        <div class="media-body">
+                          <h5 class="font-size-14 mb-0">Project B</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <i class="bx bx-book-content font-size-20 d-sm-none"></i>
+                <span class="d-none d-sm-block">Contacts</span>
+              </a>
+              <ng-template ngbNavContent>
+                <h5 class="font-size-14 mb-3">Contacts</h5>
+                <ngx-simplebar style="height: 410px;" #scrollEle>
+                  <div>
+                    <div class="avatar-xs mb-3">
+                      <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                        A
+                      </span>
+                    </div>
+
+                    <ul class="list-unstyled chat-list">
+                      <li>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Adam Miller</h5>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Alfonso Fisher</h5>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="avatar-xs mb-3">
+                      <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                        B
+                      </span>
+                    </div>
+
+                    <ul class="list-unstyled chat-list">
+                      <li>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Bonnie Harney</h5>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="avatar-xs mb-3">
+                      <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                        C
+                      </span>
+                    </div>
+
+                    <ul class="list-unstyled chat-list">
+                      <li>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Charles Brown</h5>
+                        </a>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Carmella Jones</h5>
+                        </a>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Carrie Williams</h5>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-4">
+                    <div class="avatar-xs mb-3">
+                      <span class="avatar-title rounded-circle bg-soft bg-primary text-primary">
+                        D
+                      </span>
+                    </div>
+
+                    <ul class="list-unstyled chat-list">
+                      <li>
+                        <a href="javascript: void(0);">
+                          <h5 class="font-size-14 mb-0">Dolores Minter</h5>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </ngx-simplebar>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="nav" class="my-4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 user-chat">
+      <div class="card">
+        <div class="p-4 border-bottom">
+          <div class="row">
+            <div class="col-md-4 col-9">
+              <h5 class="font-size-15 mb-1">{{username}}</h5>
+              <p class="text-muted mb-0"><i class="mdi mdi-circle text-success align-middle me-1"></i> Active now</p>
+            </div>
+            <div class="col-md-8 col-3">
+              <ul class="list-inline user-chat-nav text-end mb-0">
+                <li class="list-inline-item d-none d-sm-inline-block">
+                  <div class="dropdown" ngbDropdown>
+                    <button class="btn nav-btn dropdown-toggle" ngbDropdownToggle type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="bx bx-search-alt-2"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-md" ngbDropdownMenu>
+                      <form class="p-3">
+                        <div class="m-0">
+                          <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search ..."
+                              aria-label="Recipient's username">
+
+                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-inline-item  d-none d-sm-inline-block">
+                  <div class="dropdown" ngbDropdown>
+                    <button class="btn nav-btn dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownToggle
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="bx bx-cog"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript: void(0);">View Profile</a>
+                      <a class="dropdown-item" href="javascript: void(0);">Clear chat</a>
+                      <a class="dropdown-item" href="javascript: void(0);">Muted</a>
+                      <a class="dropdown-item" href="javascript: void(0);">Delete</a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="list-inline-item">
+                  <div class="dropdown" ngbDropdown>
+                    <button class="btn nav-btn dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownToggle
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript: void(0);">Action</a>
+                      <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+                      <a class="dropdown-item" href="javascript: void(0);">Something else</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="chat-conversation p-3">
+            <ngx-simplebar style="height: 470px;" #scrollRef>
+              <ul class="list-unstyled">
+                <li>
+                  <div class="chat-day-title">
+                    <span class="title">Today</span>
+                  </div>
+                </li>
+                <li *ngFor="let data of chatMessagesData" [ngClass]="
+              {
+                'right': data.align === 'right'
+              }">
+                  <div class="conversation-list">
+                    <div class="dropdown" ngbDropdown>
+
+                      <a class="dropdown-toggle" href="javascript: void(0);" role="button" ngbDropdownToggle>
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                      </a>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <a class="dropdown-item" href="javascript: void(0);">Copy</a>
+                        <a class="dropdown-item" href="javascript: void(0);">Save</a>
+                        <a class="dropdown-item" href="javascript: void(0);">Forward</a>
+                        <a class="dropdown-item" href="javascript: void(0);">Delete</a>
+                      </div>
+                    </div>
+                    <div class="ctext-wrap">
+                      <div class="conversation-name">{{ data.name }}</div>
+                      <p>
+                        {{ data.message }}
+                      </p>
+                      <p class="chat-time mb-0"><i class="bx bx-time-five align-middle me-1"></i> {{ data.time }}</p>
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+            </ngx-simplebar>
+          </div>
+          <div class="p-3 chat-input-section">
+
+            <form (ngSubmit)="messageSave()" [formGroup]="formData" class="row">
+              <div class="col">
+                <div class="position-relative">
+                  <input type="text" class="form-control chat-input" placeholder="Enter Message..."
+                    formControlName="message" [ngClass]="{'is-invalid': chatSubmit && form.message.errors}">
+                  <div *ngIf="chatSubmit && form.message.errors" class="invalid-feedback">
+                    <span *ngIf="form.message.errors.required">This value is required.</span>
+                  </div>
+                  <div class="chat-input-links">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item"><a href="javascript: void(0);" data-toggle="tooltip" placement="top"
+                          ngbTooltip="Emoji"><i class="mdi mdi-emoticon-happy-outline"></i></a></li>
+                      <li class="list-inline-item"><a href="javascript: void(0);" data-toggle="tooltip" placement="top"
+                          ngbTooltip="Images"><i class="mdi mdi-file-image-outline"></i></a></li>
+                      <li class="list-inline-item"><a href="javascript: void(0);" data-toggle="tooltip" placement="top"
+                          ngbTooltip="Add Files"><i class="mdi mdi-file-document-outline"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary btn-rounded chat-send w-md"><span
+                    class="d-none d-sm-inline-block me-2">Send</span> <i class="mdi mdi-send"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div>

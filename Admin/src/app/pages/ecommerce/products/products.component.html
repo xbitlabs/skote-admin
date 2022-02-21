@@ -1,0 +1,156 @@
+<div class="container-fluid">
+  <!-- page title -->
+  <app-page-title title="Products" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Filter</h4>
+          <div>
+            <h5 class="font-size-14 mb-3">Clothes</h5>
+            <ul class="list-unstyled product-list">
+              <li><a href="javascript: void(0);"><i class="mdi mdi-chevron-right me-1"></i> T-shirts</a></li>
+              <li><a href="javascript: void(0);"><i class="mdi mdi-chevron-right me-1"></i> Shirts</a></li>
+              <li><a href="javascript: void(0);"><i class="mdi mdi-chevron-right me-1"></i> Jeans</a></li>
+              <li><a href="javascript: void(0);"><i class="mdi mdi-chevron-right me-1"></i> Jackets</a></li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3">
+            <h5 class="font-size-14 mb-3">Price</h5>
+            <ng5-slider [(value)]="pricevalue" [(highValue)]="maxVal" [options]="priceoption"
+              (valueChange)="valueChange($event,true)" (highValueChange)="valueChange($event,false)"></ng5-slider>
+          </div>
+
+          <div class="mt-4 pt-3">
+            <h5 class="font-size-14 mb-3">Discount</h5>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck1"
+                (change)="discountLessFilter($event,10)">
+              <label class="form-check-label" for="productdiscountCheck1">Less than 10%</label>
+            </div>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck2"
+                (change)="discountMoreFilter($event,10)">
+              <label class="form-check-label" for="productdiscountCheck2">10% or more</label>
+            </div>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck3"
+                (change)="discountMoreFilter($event,20)">
+              <label class="form-check-label" for="productdiscountCheck3">20% or more</label>
+            </div>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck4"
+                (change)="discountMoreFilter($event,30)">
+              <label class="form-check-label" for="productdiscountCheck4">30% or more</label>
+            </div>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck5"
+                (change)="discountMoreFilter($event,40)">
+              <label class="form-check-label" for="productdiscountCheck5">40% or more</label>
+            </div>
+            <div class="form-check mt-2">
+              <input type="checkbox" class="form-check-input" id="productdiscountCheck6"
+                (change)="discountMoreFilter($event,50)">
+              <label class="form-check-label" for="productdiscountCheck6">50% or more</label>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3">
+            <h5 class="font-size-14 mb-3">Customer Rating</h5>
+            <div>
+              <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" id="productratingCheck1">
+                <label class="form-check-label" for="productratingCheck1">4 <i class="bx bx-star text-warning"></i>
+                  & Above</label>
+              </div>
+              <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" id="productratingCheck2">
+                <label class="form-check-label" for="productratingCheck2">3 <i class="bx bx-star text-warning"></i>
+                  & Above</label>
+              </div>
+              <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" id="productratingCheck3">
+                <label class="form-check-label" for="productratingCheck3">2 <i class="bx bx-star text-warning"></i>
+                  & Above</label>
+              </div>
+              <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" id="productratingCheck4">
+                <label class="form-check-label" for="productratingCheck4">1 <i
+                    class="bx bx-star text-warning"></i></label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-9">
+      <div class="row mb-3">
+        <div class="col-xl-4 col-sm-6">
+          <div class="mt-2">
+            <h5>Clothes</h5>
+          </div>
+        </div>
+        <div class="col-lg-8 col-sm-6">
+          <form class="mt-4 mt-sm-0 float-sm-end d-flex align-items-center">
+            <div class="search-box me-2">
+              <div class="position-relative">
+                <input type="text" class="form-control border-0" placeholder="Search..." (input)="searchFilter($event)">
+                <i class="bx bx-search-alt search-icon"></i>
+              </div>
+            </div>
+            <ul class="nav nav-pills product-view-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="javascript: void(0);"><i class="bx bx-grid-alt"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript: void(0);"><i class="bx bx-list-ul"></i></a>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-sm-6" *ngFor="let product of products">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img position-relative">
+                <div class="avatar-sm product-ribbon">
+                  <span class="avatar-title rounded-circle bg-primary">
+                      -{{product.discount}} % 
+                  </span>
+                </div>
+                
+                <a [routerLink]="['/ecommerce/product-detail',product.id]" href="javascript: void(0);"><img src="{{product.images[0]}}" alt=""
+                  class="img-fluid mx-auto d-block"></a>
+              </div>
+              <div class="mt-4 text-center">
+                <h5 class="mb-3 text-truncate"><a [routerLink]="['/ecommerce/product-detail',product.id]" href="javascript: void(0);" class="text-dark">{{product.name}} </a>
+                </h5>
+
+                <p class="text-muted">
+                  <i class="bx bx-star text-warning"></i>
+                  <i class="bx bx-star text-warning"></i>
+                  <i class="bx bx-star text-warning"></i>
+                  <i class="bx bx-star text-warning"></i>
+                  <i class="bx bx-star text-warning"></i>
+                </p>
+                <h5 class="my-0"><span class="text-muted mr-2"><del>$ {{product.oriRate}}</del></span> <b>$
+                  {{product.disRate}}</b></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ngb-pagination class="pagination pagination-rounded justify-content-center mt-3 mb-4 pb-1" [collectionSize]="6" page="1"
+            [maxSize]="1" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>

@@ -1,0 +1,315 @@
+{
+  "HEADER": {
+    "SEARCH": "Search...",
+    "MEGA_MENU": "Mega Menu",
+    "NOTIFICATIONS": {
+      "TITLE": "Notifications",
+      "VIEW_ALL": "View All",
+      "LOAD_MORE": "View More..",
+      "FIRST": {
+        "TITLE": "Your order is placed",
+        "TEXT": "If several languages coalesce the grammar",
+        "TIME": "3 min ago"
+      },
+      "SECOND": {
+        "TITLE": "James Lemire",
+        "TEXT": "It will seem like simplified English.",
+        "TIME": "1 hours ago"
+      },
+      "THIRD": {
+        "TITLE": "Your item is shipped",
+        "TEXT": "If several languages coalesce the grammar",
+        "TIME": "3 min ago"
+      },
+      "FOUR": {
+        "TITLE": "Salena Layfield",
+        "TEXT": "As a skeptical Cambridge friend of mine occidental.",
+        "TIME": "1 hours ago"
+      }
+    },
+    "SETTINGS": "Settings",
+    "UI": {
+      "TITLE": "UI Components",
+      "LIGHTBOX": "LightBox",
+      "RANGE_SLIDER": "Range Slider",
+      "SWEET_ALERT": "Sweet Alert",
+      "RATING": "Rating",
+      "FORMS": "Forms",
+      "TABLES": "Tables",
+      "CHARTS": "Charts"
+    },
+    "APPLICATIONS": {
+      "TITLE": "Applications",
+      "ECOMMERCE": "Ecommerce",
+      "CALENDAR": "Calendar",
+      "EMAIL": "Email",
+      "PROJECTS": "Projects",
+      "TASKS": "Tasks",
+      "CONTACTS": "Contacts"
+    },
+    "EXTRA_PAGES": {
+      "TITLE": "Extra Pages",
+      "LIGHT_SIDEBAR": "Light Sidebar",
+      "COMPACT_SIDEBAR": "Compact Sidebar",
+      "HORIZONTAL_LAYOUT": "Horizontal layout",
+      "MAINTENANCE": "Maintenance",
+      "COMING SOON": "Coming Soon",
+      "TIMELINE": "Timeline",
+      "FAQ": "FAQs"
+    },
+    "LOGIN": {
+      "PROFILE": "Profile",
+      "MY_WALLET": "My Wallet",
+      "SETTINGS": "Settings",
+      "LOCK_SCREEN": "Lock screen",
+      "LOGOUT": "Logout"
+    }
+  },
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Menu"
+    },
+    "DASHBOARDS": {
+      "TEXT": "Dashboards",
+      "BADGE": "04",
+      "LIST": {
+        "DEFAULT": "Default",
+        "SAAS": "Saas",
+        "CRYPTO": "Crypto",
+        "BLOG": "Blog"
+      }
+    },
+    "LAYOUTS": {
+      "TEXT": "Layouts",
+      "LIST": {
+        "HORIZONTAL": "Horizontal",
+        "LIGHTSIDEBAR": "Light Sidebar",
+        "COMPACTSIDEBAR": "Compact Sidebar",
+        "ICONSIDEBAR": "Icons Sidebar",
+        "BOXED": "Boxed Layout",
+        "COLOREDSIDEBAR": "Colored Sidebar",
+        "VERTICAL": "Vertical",
+        "LIGHTTOPBAR": "Light Topbar",
+        "COLOREDHEADER": "Colored Header",
+        "SCROLLABLE": "Scrollable"
+      }
+    },
+    "APPS": {
+      "TEXT": "Apps"
+    },
+    "CALENDAR": {
+      "TEXT": "Calendar"
+    },
+    "CHAT": {
+      "TEXT": "Chat",
+      "BADGE": "New"
+    },
+    "FILEMANAGER": {
+      "TEXT": "File Manager",
+      "BADGE": "New"
+    },
+    "ECOMMERCE": {
+      "TEXT": "Ecommerce",
+      "LIST": {
+        "PRODUCTS": "Products",
+        "PRODUCTDETAIL": "Product Detail",
+        "ORDERS": "Orders",
+        "CUSTOMERS": "Customers",
+        "CART": "Cart",
+        "CHECKOUT": "Checkout",
+        "SHOPS": "Shops",
+        "ADDPRODUCT": "Add Product"
+      }
+    },
+    "CRYPTO": {
+      "TEXT": "Crypto",
+      "LIST": {
+        "WALLET": "Wallet",
+        "BUY/SELL": "Buy/Sell",
+        "EXCHANGE": "Exchange",
+        "LENDING": "Lending",
+        "ORDERS": "Orders",
+        "KYCAPPLICATION": "KYC Application",
+        "ICOLANDING": "ICO Landing"
+      }
+    },
+    "EMAIL": {
+      "TEXT": "Email",
+      "LIST": {
+        "INBOX": "Inbox",
+        "READEMAIL": "Read Email",
+        "TEMPLATE": {
+          "BADGE": "New",
+          "TEXT": "Template",
+          "LIST": {
+            "BASIC": "Basic Action",
+            "ALERT": "Alert Email",
+            "BILLING": "Billing Email"
+          }
+        }
+      }
+    },
+    "INVOICES": {
+      "TEXT": "Invoices",
+      "LIST": {
+        "INVOICELIST": "Invoice List",
+        "INVOICEDETAIL": "Invoice Detail"
+      }
+    },
+    "PROJECTS": {
+      "TEXT": "Projects",
+      "LIST": {
+        "GRID": "Projects Grid",
+        "PROJECTLIST": "Projects List",
+        "OVERVIEW": "Project Overview",
+        "CREATE": "Create New"
+      }
+    },
+    "TASKS": {
+      "TEXT": "Tasks",
+      "LIST": {
+        "TASKLIST": "Task List",
+        "KANBAN": "Kanban Board",
+        "CREATETASK": "Create Task"
+      }
+    },
+    "CONTACTS": {
+      "TEXT": "Contacts",
+      "LIST": {
+        "USERGRID": "User Grid",
+        "USERLIST": "User List",
+        "PROFILE": "Profile"
+      }
+    },
+    "BLOG": {
+      "TEXT": "Blog",
+      "BADGE": "New",
+      "LIST": {
+        "BLOGLIST": "Blog List",
+        "BLOGGRID": "Blog Grid",
+        "DETAIL": "Blog Details"
+      }
+    },
+    "PAGES": {
+      "TEXT": "Pages"
+    },
+    "AUTHENTICATION": {
+      "TEXT": "Authentication",
+      "BADGE": "New",
+      "LIST": {
+        "LOGIN": "Login",
+        "LOGIN2": "Login 2",
+        "REGISTER": "Register",
+        "REGISTER2": "Register 2",
+        "RECOVERPWD": "Recover Password",
+        "RECOVERPWD2": "Recover Password 2",
+        "LOCKSCREEN": "Lock screen",
+        "LOCKSCREEN2": "Lock screen 2",
+        "CONFIRMMAIL": "Confirm Mail",
+        "CONFIRMMAIL2": "Confirm Mail 2",
+        "EMAILVERIFICATION": "Email verification",
+        "EMAILVERIFICATION2": "Email verification 2",
+        "TWOSTEPVERIFICATION": "Two step verification",
+        "TWOSTEPVERIFICATION2": "Two step verification 2"
+      }
+    },
+    "UTILITY": {
+      "TEXT": "Utility",
+      "LIST": {
+        "STARTER": "Starter Page",
+        "MAINTENANCE": "Maintenance",
+        "TIMELINE": "Timeline",
+        "FAQS": "FAQs",
+        "PRICING": "Pricing",
+        "ERROR404": "Error 404",
+        "ERROR500": "Error 500"
+      }
+    },
+    "COMPONENTS": {
+      "TEXT": "Components"
+    },
+    "UIELEMENTS": {
+      "TEXT": "UI Elements",
+      "LIST": {
+        "ALERTS": "Alerts",
+        "BUTTONS": "Buttons",
+        "CARDS": "Cards",
+        "CAROUSEL": "Carousel",
+        "DROPDOWNS": "Dropdowns",
+        "GRID": "Grid",
+        "IMAGES": "Images",
+        "LIGHTBOX": "Lightbox",
+        "MODALS": "Modals",
+        "RANGESLIDER": "Range Slider",
+        "PROGRESSBAR": "Progress Bars",
+        "PLACEHOLDER": "Placeholder",
+        "SWEETALERT": "Sweet Alert",
+        "TABS": "Tabs & Accordions",
+        "TYPOGRAPHY": "Typography",
+        "VIDEO": "Video",
+        "GENERAL": "General",
+        "COLORS": "Colors",
+        "CROPPER": "Image Cropper"
+      }
+    },
+    "FORMS": {
+      "TEXT": "Forms",
+      "BADGE": "09",
+      "LIST": {
+        "ELEMENTS": "Form Elements",
+        "VALIDATION": "Form Validation",
+        "ADVANCED": "Form Advanced",
+        "EDITOR": "Form Editor",
+        "FILEUPLOAD": "Form File Upload",
+        "REPEATER": "Form Repeater",
+        "WIZARD": "Form Wizard",
+        "MASK": "Form Mask",
+        "LAYOUTS": "Form Layouts"
+      }
+    },
+    "TABLES": {
+      "TEXT": "Tables",
+      "LIST": {
+        "BASIC": "Basic Tables",
+        "ADVANCED": "Advanced Table"
+      }
+    },
+    "CHARTS": {
+      "TEXT": "Charts",
+      "LIST": {
+        "APEX": "Apex Chart",
+        "CHARTJS": "Chartjs Chart",
+        "CHARTIST": "Chartist Chart",
+        "ECHART": "E Chart"
+      }
+    },
+    "ICONS": {
+      "TEXT": "Icons",
+      "LIST": {
+        "BOXICONS": "Boxicons",
+        "MATERIALDESIGN": "Material Design",
+        "DRIPICONS": "Dripicons",
+        "FONTAWESOME": "Font Awesome"
+      }
+    },
+    "MAPS": {
+      "TEXT": "Maps",
+      "LIST": {
+        "GOOGLEMAP": "Google Maps"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Multi Level",
+      "LIST": {
+        "LEVEL1": {
+          "1": "Level 1.1",
+          "2": "Level 1.2",
+          "LEVEL2": {
+            "1": "Level 2.1",
+            "2": "Level 2.2"
+          }
+        }
+      }
+    }
+  }
+}

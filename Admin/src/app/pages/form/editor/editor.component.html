@@ -1,0 +1,17 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Form Editor" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-3">CK Editor</h4>
+            <ckeditor [editor]="Editor" data="<p>Content of the editor.</p>"></ckeditor>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

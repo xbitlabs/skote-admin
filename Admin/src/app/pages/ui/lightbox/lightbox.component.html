@@ -1,0 +1,157 @@
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <app-page-title title="Lightbox" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Single image lightbox</h4>
+                    <p class="card-title-desc">Three simple popups with different scaling settings.</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <h5 class="font-size-14">Fits (Horz/Vert)</h5>
+                                <div *ngFor="let image of images; let i=index" class="image-popup-vertical-fit">
+                                    <div class="img-fluid">
+                                        <img [src]="image.thumb" (click)="openImage(i)" width="145" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Lightbox gallery</h4>
+                    <p class="card-title-desc">In this example lazy-loading of images is enabled for the next image
+                        based on move direction. </p>
+                    <div class="popup-gallery d-flex flex-wrap">
+                        <div class="card1" *ngFor="let image of albums; let i=index">
+                            <div class="img-fluid">
+                                <img [src]="image.thumb" (click)="open(i)" width="120" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Zoom Gallery</h4>
+                    <p class="card-title-desc">Zoom effect works only with images.</p>
+                    <div class="zoom-gallery d-flex flex-wrap">
+                        <div *ngFor="let image of gallery; let i=index">
+                            <img [src]="image.thumb" (click)="openZoomGallery(i)" width="275" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Popup with video or map</h4>
+                    <p class="card-title-desc">In this example lazy-loading of images is enabled for the next image
+                        based on move direction. </p>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="button-items">
+                                <button type="button" class="btn btn-primary popup-youtube btn btn-secondary mo-mb-2"
+                                    (click)="openYoutubeModal(youtube)">Open YouTube Video</button>
+                                <button type="button" class="btn btn-primary popup-gmaps btn btn-secondary mo-mb-2"
+                                    (click)="openMapModal(googlemap)">Open Google Map</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Popup with Form</h4>
+                    <div>
+                        <button type="button" class="btn btn-primary" (click)="openModal(content)">Popup form</button>
+                    </div>
+                    <!-- Modal Open -->
+                    <ng-template #content role="document" let-modal>
+                        <div class="modal-header">
+                            <h5 class="modal-title mt-0">Form</h5>
+                            <button type="button" class="btn-close" aria-hidden="true"
+                                (click)="modal.dismiss('Cross click')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password"
+                                                placeholder="Enter Password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <textarea class="form-control" id="subject" rows="3"></textarea>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+        <!-- Youtube Modal Open -->
+        <ng-template #youtube role="document" let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close text-white" aria-hidden="true"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+                <youtube-player [videoId]="id" height="450" width="780">
+                </youtube-player>
+            </div>
+        </ng-template>
+
+        <!-- Google Map Modal Open -->
+        <ng-template #googlemap role="document" let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-hidden="true"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+                <agm-map [latitude]="latitude" [longitude]="longitude" style="height: 300px"></agm-map>
+            </div>
+        </ng-template>
+    </div> <!-- end row -->
+</div>
